@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour, IDamageable {
@@ -7,11 +5,17 @@ public class Enemy : MonoBehaviour, IDamageable {
   public float speed;
   public float timeBetweenAttacks;
   public int damage;
-  public int pickupChance;
-  public GameObject[] pickups;
+
+  [System.Serializable]
+  public class Drop {
+    public GameObject[] Pickups;
+    public int pickupChance;
+  }
 
   [HideInInspector]
   public Transform player;
+
+  public Drop[] drops;
 
   public virtual void Start() {
     player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -21,12 +25,21 @@ public class Enemy : MonoBehaviour, IDamageable {
     health -= damageAmount;
 
     if (health <= 0) {
-      int randomNumber = Random.Range(0, 101);
-      if (randomNumber <= pickupChance) {
-        GameObject randomPickup = pickups[Random.Range(0, pickups.Length)];
-        Instantiate(randomPickup, transform.position, transform.rotation);
-      }
+
+      throwDrop();
       Destroy(gameObject);
+    }
+  }
+
+  void throwDrop() {
+    foreach (var drop in drops) {
+      int randomNumber = Random.Range(0, 100);
+      if (randomNumber <= drop.pickupChance) {
+        GameObject randomPickup = drop.Pickups[Random.Range(0, drop.Pickups.Length)];
+        Vector3 randomPosition = new Vector3(Random.Range(-50, 50) * .01f, Random.Range(-50, 50) * .01f, 0);
+
+        Instantiate(randomPickup, transform.position + randomPosition, transform.rotation);
+      }
     }
   }
 }

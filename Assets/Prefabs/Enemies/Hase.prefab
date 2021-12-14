@@ -259,7 +259,6 @@ GameObject:
   - component: {fileID: 8047650330519292276}
   - component: {fileID: 7896910175802051147}
   - component: {fileID: 6445761429746716368}
-  - component: {fileID: 3915682486510043105}
   m_Layer: 7
   m_Name: Hase
   m_TagString: Enemy
@@ -365,45 +364,17 @@ MonoBehaviour:
   speed: 2
   timeBetweenAttacks: 3
   damage: 1
-  pickupChance: 20
-  pickups:
-  - {fileID: 2618655685933290494, guid: c53f6b5daa892824a824eeba123f711f, type: 3}
-  - {fileID: 8209001304650922965, guid: 79d48d1a0f6d77746b67b7d13801e2d9, type: 3}
-  - {fileID: 8209001304650922965, guid: 83558c0fbbe08d744a42642c43a6b696, type: 3}
-  - {fileID: 8209001304650922965, guid: 9022a93be5abf1049a31c399cefafe1a, type: 3}
-  - {fileID: 8209001304650922965, guid: 66a3396582a99394b9ad637db5d72250, type: 3}
-  - {fileID: 2618655685933290494, guid: c53f6b5daa892824a824eeba123f711f, type: 3}
-  - {fileID: 2618655685933290494, guid: c53f6b5daa892824a824eeba123f711f, type: 3}
-  - {fileID: 2618655685933290494, guid: c53f6b5daa892824a824eeba123f711f, type: 3}
   player: {fileID: 0}
+  drops:
+  - Pickups:
+    - {fileID: 2618655685933290494, guid: c53f6b5daa892824a824eeba123f711f, type: 3}
+    pickupChance: 30
+  - Pickups:
+    - {fileID: 8209001304650922965, guid: 79d48d1a0f6d77746b67b7d13801e2d9, type: 3}
+    - {fileID: 8209001304650922965, guid: 83558c0fbbe08d744a42642c43a6b696, type: 3}
+    pickupChance: 10
   stopDistance: 2
   attackDuration: 0.5
---- !u!114 &3915682486510043105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3268935172828784705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShadowGroup: 0
-  m_HasRenderer: 0
-  m_UseRendererSilhouette: 1
-  m_CastsShadows: 1
-  m_SelfShadows: 0
-  m_ApplyToSortingLayers: 00000000
-  m_ShapePath:
-  - {x: -0.31300187, y: -0.83803284, z: 0.00000035621622}
-  - {x: 0.5083432, y: -0.8838984, z: 0.00000035621622}
-  - {x: 0.40896782, y: 0.9592068, z: 0.00000035621622}
-  - {x: -0.083674215, y: 0.9439183, z: 0.00000035621622}
-  m_ShapePathHash: 1808936867
-  m_Mesh: {fileID: 0}
-  m_InstanceId: 44610
 --- !u!1 &3268935172888298356
 GameObject:
   m_ObjectHideFlags: 0

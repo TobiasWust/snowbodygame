@@ -46,7 +46,7 @@ public class PlayerMover : MonoBehaviour, IDamageable {
   }
 
   public void addHealth(int healthAmount) {
-    if (health == hearts.Length) return;
+    if (health >= hearts.Length) return;
 
     health += healthAmount;
     updateHealthUI(health);
