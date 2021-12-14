@@ -367,7 +367,12 @@ MonoBehaviour:
   damage: 1
   pickupChance: 0
   pickups:
+  - {fileID: 8209001304650922965, guid: e83b29ee68972f641b6b154544f9159c, type: 3}
   - {fileID: 8209001304650922965, guid: 79d48d1a0f6d77746b67b7d13801e2d9, type: 3}
+  - {fileID: 8209001304650922965, guid: 83558c0fbbe08d744a42642c43a6b696, type: 3}
+  - {fileID: 8209001304650922965, guid: 9022a93be5abf1049a31c399cefafe1a, type: 3}
+  - {fileID: 8209001304650922965, guid: 66a3396582a99394b9ad637db5d72250, type: 3}
+  - {fileID: 8209001304650922965, guid: 9ffe7807c69ce434f91939c4fffb5d24, type: 3}
   player: {fileID: 0}
   stopDistance: 2
   attackDuration: 0.5
@@ -396,7 +401,7 @@ MonoBehaviour:
   - {x: -0.083674215, y: 0.9439183, z: 0.00000035621622}
   m_ShapePathHash: 1808936867
   m_Mesh: {fileID: 0}
-  m_InstanceId: 22060
+  m_InstanceId: 31522
 --- !u!1 &3268935172888298356
 GameObject:
   m_ObjectHideFlags: 0
