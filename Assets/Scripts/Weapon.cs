@@ -22,18 +22,18 @@ public class Weapon : MonoBehaviour {
 
   private void Update() {
     // mouse input
-    // Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-    // float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-    // Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
-    // transform.rotation = rotation;
+    Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+    Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+    transform.rotation = rotation;
 
 
     // controller input
-    if (Input.GetAxisRaw("RightStickVertical") != 0 && Input.GetAxisRaw("RightStickHorizontal") != 0) {
-      float angle = Mathf.Atan2(-Input.GetAxisRaw("RightStickVertical"), Input.GetAxisRaw("RightStickHorizontal")) * Mathf.Rad2Deg;
-      Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
-      transform.rotation = rotation;
-    }
+    // if (Input.GetAxis("RightStickVertical") != 0 || Input.GetAxis("RightStickHorizontal") != 0) {
+    //   float angle = Mathf.Atan2(-Input.GetAxis("RightStickVertical"), Input.GetAxis("RightStickHorizontal")) * Mathf.Rad2Deg;
+    //   Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+    //   transform.rotation = rotation;
+    // }
 
     if (Input.GetButton("Fire1") && Time.time >= shotTime) {
       GameObject bullet = Instantiate(projectile, shotPoint.position, transform.rotation);
