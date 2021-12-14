@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour, IDamageable {
   public float speed;
   public float timeBetweenAttacks;
   public int damage;
+  public int pickupChance;
+  public GameObject[] pickups;
 
   [HideInInspector]
   public Transform player;
@@ -19,6 +21,11 @@ public class Enemy : MonoBehaviour, IDamageable {
     health -= damageAmount;
 
     if (health <= 0) {
+      int randomNumber = Random.Range(0, 101);
+      if (randomNumber > pickupChance) {
+        GameObject randomPickup = pickups[Random.Range(0, pickups.Length)];
+        Instantiate(randomPickup, transform.position, transform.rotation);
+      }
       Destroy(gameObject);
     }
   }

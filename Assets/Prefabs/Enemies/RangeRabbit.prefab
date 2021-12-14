@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 3532036121239527634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6293848, y: 0.6293848, z: 0.6293848}
   m_Children:
   - {fileID: 3532036123111649216}
   - {fileID: 759402937199873527}
@@ -149,6 +149,8 @@ MonoBehaviour:
   speed: 2
   timeBetweenAttacks: 4
   damage: 0
+  pickupChance: 0
+  pickups: []
   player: {fileID: 0}
   stopDistance: 4
   shotPoint: {fileID: 759402937199873527}

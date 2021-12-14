@@ -50,14 +50,21 @@ public class PlayerMover : MonoBehaviour, IDamageable {
     GameObject oldWeapon = GameObject.FindGameObjectWithTag("Weapon");
     Transform oldTransform = oldWeapon.transform;
     Instantiate(weapon, oldTransform.position, oldTransform.rotation, transform);
-    Pickup newPickup = Instantiate(oldWeapon.GetComponent<Weapon>().PickupObject, transform.position, transform.rotation);
-
-    int jumpDirection = anim.GetBool("isRunningLeft") ? 2 : -2;
-    newPickup.gameObject.layer = 6; // dont pick up at first
-    newPickup.gameObject.transform.DOJump(transform.position + Vector3.right * jumpDirection, 2, 1, 1)
-      .OnComplete(() => { newPickup.gameObject.layer = 0; });
-
     Destroy(oldWeapon);
+
+    // throw away old weapon;
+    // GameObject oldWeapon = GameObject.FindGameObjectWithTag("Weapon");
+    // Transform oldTransform = oldWeapon.transform;
+    // Instantiate(weapon, oldTransform.position, oldTransform.rotation, transform);
+    // Pickup newPickup = Instantiate(oldWeapon.GetComponent<Weapon>().PickupObject, transform.position, transform.rotation);
+    // newPickup.tag = "Weapon";
+
+    // int jumpDirection = anim.GetBool("isRunningLeft") ? 2 : -2;
+    // newPickup.gameObject.layer = 6; // dont pick up at first
+    // newPickup.gameObject.transform.DOJump(transform.position + Vector3.right * jumpDirection, 2, 1, 1)
+    //   .OnComplete(() => { newPickup.gameObject.layer = 0; });
+
+    // Destroy(oldWeapon);
   }
 
   private void test() { }
