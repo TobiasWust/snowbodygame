@@ -23,7 +23,7 @@ public class MeleeEnemy : Enemy {
   }
 
   private void OnCollisionEnter2D(Collision2D other) {
-    if (other.collider.tag == "Player") {
+    if (other.gameObject.tag == "Player") {
       player.GetComponent<PlayerMover>().takeDamage(damage);
     }
   }

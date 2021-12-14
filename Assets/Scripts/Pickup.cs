@@ -10,8 +10,8 @@ public class Pickup : MonoBehaviour {
 
   }
 
-  private void OnTriggerEnter2D(Collider2D other) {
-    if (other.tag == "Player") {
+  private void OnCollisionEnter2D(Collision2D other) {
+    if (other.gameObject.tag == "Player") {
       other.gameObject.GetComponent<PlayerMover>().equipWeapon(WeaponToEquip);
       Destroy(gameObject);
     }

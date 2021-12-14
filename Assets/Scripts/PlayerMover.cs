@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
 
 public class PlayerMover : MonoBehaviour, IDamageable {
   public float speed;
-  public float health;
+  private int health;
 
-  public Slider Healthbar;
+  public Image[] hearts;
+  public Sprite fullHeart;
+  public Sprite emptyHeart;
 
   Rigidbody2D rb;
   Animator anim;
@@ -17,8 +16,7 @@ public class PlayerMover : MonoBehaviour, IDamageable {
   private void Start() {
     rb = GetComponent<Rigidbody2D>();
     anim = GetComponent<Animator>();
-
-    Healthbar.value = health;
+    health = hearts.Length;
   }
 
   private void Update() {
@@ -35,10 +33,29 @@ public class PlayerMover : MonoBehaviour, IDamageable {
     rb.MovePosition(rb.position + moveAmount * Time.fixedDeltaTime);
   }
 
+  void updateHealthUI(int currentHealth) {
+    for (int i = 0; i < hearts.Length; i++) {
+      if (i < currentHealth) {
+        hearts[i].sprite = fullHeart;
+        hearts[i].transform.localScale = new Vector3(1, 1, 1);
+      } else {
+        hearts[i].sprite = emptyHeart;
+        hearts[i].transform.localScale = new Vector3(.5f, .5f, .5f);
+      }
+    }
+  }
+
+  public void addHealth(int healthAmount) {
+    if (health == hearts.Length) return;
+
+    health += healthAmount;
+    updateHealthUI(health);
+  }
+
   public void takeDamage(int damageAmount) {
     health -= damageAmount;
 
-    Healthbar.value = health;
+    updateHealthUI(health);
 
     if (health <= 0) {
       Debug.Log("You Died :(");
@@ -47,10 +64,21 @@ public class PlayerMover : MonoBehaviour, IDamageable {
   }
 
   public void equipWeapon(Weapon weapon) {
-    GameObject oldWeapon = GameObject.FindGameObjectWithTag("Weapon");
-    Transform oldTransform = oldWeapon.transform;
-    Instantiate(weapon, oldTransform.position, oldTransform.rotation, transform);
-    Destroy(oldWeapon);
+
+    Destroy(GameObject.FindGameObjectWithTag("Weapon"));
+    Instantiate(weapon, transform.position, transform.rotation, transform);
+
+    // original version + multiple at once bugfix
+    // foreach (var oldWeapon in GameObject.FindGameObjectsWithTag("Weapon")) {
+    //   Destroy(oldWeapon);
+    // }
+    // Instantiate(weapon, transform.position, transform.rotation, transform);
+
+    // my version
+    // GameObject oldWeapon = GameObject.FindGameObjectWithTag("Weapon");
+    // Transform oldTransform = oldWeapon.transform;
+    // Instantiate(weapon, oldTransform.position, oldTransform.rotation, transform);
+    // Destroy(oldWeapon);
 
     // throw away old weapon;
     // GameObject oldWeapon = GameObject.FindGameObjectWithTag("Weapon");

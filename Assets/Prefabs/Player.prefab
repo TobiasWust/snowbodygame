@@ -751,9 +751,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bccc7d614c5a74a448dd727104840ae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.5
-  health: 20
-  Healthbar: {fileID: 0}
+  speed: 5
+  health: 5
+  hearts: []
+  fullHeart: {fileID: -205270267638800340, guid: 0eb9944e7baf9084b94421de321f5cb2, type: 3}
+  emptyHeart: {fileID: 7904136456745960365, guid: 0eb9944e7baf9084b94421de321f5cb2, type: 3}
 --- !u!61 &7273422372105395345
 BoxCollider2D:
   m_ObjectHideFlags: 0
