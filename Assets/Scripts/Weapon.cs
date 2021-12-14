@@ -21,18 +21,24 @@ public class Weapon : MonoBehaviour {
   // Vector2 direction = GetWorldPositionOnPlane(Input.mousePosition, 0) - transform.position;
 
   private void Update() {
-    Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-    Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+    // mouse input
+    // Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+    // float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+    // Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+    // transform.rotation = rotation;
 
-    transform.rotation = rotation;
 
-    if (Input.GetMouseButton(0)) {
-      if (Time.time >= shotTime) {
-        GameObject bullet = Instantiate(projectile, shotPoint.position, transform.rotation);
-        bullet.layer = 6; // player layer to avoid self hitting
-        shotTime = Time.time + timeBetweenShots;
-      }
+    // controller input
+    if (Input.GetAxisRaw("RightStickVertical") != 0 && Input.GetAxisRaw("RightStickHorizontal") != 0) {
+      float angle = Mathf.Atan2(-Input.GetAxisRaw("RightStickVertical"), Input.GetAxisRaw("RightStickHorizontal")) * Mathf.Rad2Deg;
+      Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+      transform.rotation = rotation;
+    }
+
+    if (Input.GetButton("Fire1") && Time.time >= shotTime) {
+      GameObject bullet = Instantiate(projectile, shotPoint.position, transform.rotation);
+      bullet.layer = 6; // player layer to avoid self hitting
+      shotTime = Time.time + timeBetweenShots;
     }
   }
 }
