@@ -99,7 +99,7 @@ MonoBehaviour:
   speed: 20
   lifeTime: 0.5
   Explosion: {fileID: 0}
-  damage: 1
+  damage: 2
   HitEffect: {fileID: 30688931311797316, guid: 173fec80dcfd5a54ebeb96c4e6ee0fe2, type: 3}
 --- !u!61 &8054092276992018919
 BoxCollider2D:
