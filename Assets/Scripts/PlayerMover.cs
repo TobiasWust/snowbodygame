@@ -113,10 +113,13 @@ public class PlayerMover : MonoBehaviour, IDamageable {
   }
 
   void OnCollisionEnter2D(Collision2D other) {
+    if (other.gameObject.layer == 8) {
+      DOTween.Kill("kickback");
+    }
     // throwback on hit
     if (other.gameObject.tag != "Enemy") return;
     Vector3 dir = (other.transform.position - transform.position).normalized;
-    Vector3 target = (transform.position - dir * 2);
-    transform.DOLocalJump(target, 1f, 1, .5f);
+    Vector3 target = transform.position - dir;
+    transform.DOLocalJump(target, 1f, 1, .5f).SetUpdate(UpdateType.Fixed).SetId("kickback");
   }
 }

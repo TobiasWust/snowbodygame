@@ -5,6 +5,8 @@ using UnityEngine;
 public class PatrolBehaviour : StateMachineBehaviour {
 
   public float speed;
+  // public bool isBursting;
+  // public GameObject Burst;
 
   GameObject[] patrolPoints;
   int randomPoint;
@@ -18,6 +20,8 @@ public class PatrolBehaviour : StateMachineBehaviour {
     animator.transform.position = Vector2.MoveTowards(animator.transform.position, patrolPoints[randomPoint].transform.position, speed * Time.deltaTime);
 
     if (Vector2.Distance(animator.transform.position, patrolPoints[randomPoint].transform.position) < .1f) {
+      if (animator.GetBool("stage2")) animator.SetTrigger("explode");
+      // if (isBursting) Instantiate(Burst, animator.transform.position, animator.transform.rotation);
       randomPoint = Random.Range(0, patrolPoints.Length);
     }
   }
