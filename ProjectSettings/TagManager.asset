@@ -8,6 +8,7 @@ TagManager:
   - Weapon
   - PatrolPoint
   - VCam
+  - WeaponPanel
   layers:
   - Default
   - TransparentFX

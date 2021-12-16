@@ -12,6 +12,9 @@ public class PlayerMover : MonoBehaviour, IDamageable {
 
   public Animator hurtPanel;
 
+  public Weapon startWeapon;
+  private WeaponPanel weaponPanel;
+
   Animator camAnim;
   Rigidbody2D rb;
   Animator anim;
@@ -22,6 +25,9 @@ public class PlayerMover : MonoBehaviour, IDamageable {
     anim = GetComponent<Animator>();
     camAnim = GameObject.FindGameObjectWithTag("VCam").GetComponent<Animator>();
     health = hearts.Length;
+    weaponPanel = GameObject.FindGameObjectWithTag("WeaponPanel").GetComponent<WeaponPanel>();
+
+    equipWeapon(startWeapon);
   }
 
   private void Update() {
@@ -70,6 +76,11 @@ public class PlayerMover : MonoBehaviour, IDamageable {
   }
 
   public void equipWeapon(Weapon weapon) {
+
+    weaponPanel.setName(weapon.name);
+    weaponPanel.setSpeed(weapon.timeBetweenShots);
+    weaponPanel.setDamage(weapon.projectile.GetComponent<Projectile>().damage);
+    weaponPanel.setSprite(weapon.GetComponent<SpriteRenderer>().sprite);
 
     Destroy(GameObject.FindGameObjectWithTag("Weapon"));
     Instantiate(weapon, transform.position, transform.rotation, transform);
