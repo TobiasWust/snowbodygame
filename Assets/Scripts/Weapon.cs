@@ -7,7 +7,7 @@ public class Weapon : MonoBehaviour {
   public Transform shotPoint;
   public float timeBetweenShots;
   public Pickup PickupObject;
-
+  Animator camAnim;
   float shotTime;
 
   // for perspective view (for splitscreen)
@@ -19,6 +19,9 @@ public class Weapon : MonoBehaviour {
   //   return ray.GetPoint(distance);
   // }
   // Vector2 direction = GetWorldPositionOnPlane(Input.mousePosition, 0) - transform.position;
+  private void Start() {
+    camAnim = GameObject.FindGameObjectWithTag("VCam").GetComponent<Animator>();
+  }
 
   private void Update() {
     // mouse input
@@ -36,6 +39,7 @@ public class Weapon : MonoBehaviour {
     // }
 
     if (Input.GetButton("Fire1") && Time.time >= shotTime) {
+      camAnim.SetTrigger("zoomShake");
       GameObject bullet = Instantiate(projectile, shotPoint.position, transform.rotation);
       bullet.layer = 6; // player layer to avoid self hitting
       shotTime = Time.time + timeBetweenShots;

@@ -10,6 +10,9 @@ public class PlayerMover : MonoBehaviour, IDamageable {
   public Sprite fullHeart;
   public Sprite emptyHeart;
 
+  public Animator hurtPanel;
+
+  Animator camAnim;
   Rigidbody2D rb;
   Animator anim;
   Vector2 moveAmount;
@@ -17,6 +20,7 @@ public class PlayerMover : MonoBehaviour, IDamageable {
   private void Start() {
     rb = GetComponent<Rigidbody2D>();
     anim = GetComponent<Animator>();
+    camAnim = GameObject.FindGameObjectWithTag("VCam").GetComponent<Animator>();
     health = hearts.Length;
   }
 
@@ -55,7 +59,8 @@ public class PlayerMover : MonoBehaviour, IDamageable {
 
   public void takeDamage(int damageAmount) {
     health -= damageAmount;
-
+    camAnim.SetTrigger("shake");
+    hurtPanel.SetTrigger("hurt");
     updateHealthUI(health);
 
     if (health <= 0) {

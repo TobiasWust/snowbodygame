@@ -7,10 +7,6 @@ public class Pickup : MonoBehaviour {
   public Weapon WeaponToEquip;
   public GameObject pickUpEffect;
 
-  private void Start() {
-
-  }
-
   private void OnCollisionEnter2D(Collision2D other) {
     if (other.gameObject.tag == "Player") {
       if (pickUpEffect) Instantiate(pickUpEffect, transform.position, Quaternion.identity);

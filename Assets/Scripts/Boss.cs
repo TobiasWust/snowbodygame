@@ -9,15 +9,13 @@ public class Boss : MonoBehaviour, IDamageable {
   public GameObject landingEffect;
   int maxHealth;
 
+  Animator camAnim;
   Animator anim;
 
   void Start() {
     anim = GetComponent<Animator>();
     maxHealth = health;
-  }
-
-  void Update() {
-
+    camAnim = GameObject.FindGameObjectWithTag("VCam").GetComponent<Animator>();
   }
 
   public void takeDamage(int damageAmount) {
@@ -50,6 +48,7 @@ public class Boss : MonoBehaviour, IDamageable {
   }
 
   public void LandingEvent() {
+    camAnim.SetTrigger("shake");
     Instantiate(landingEffect, transform.position, transform.rotation);
   }
 }
