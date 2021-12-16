@@ -14,7 +14,7 @@ public class WeaponPanel : MonoBehaviour {
     WeaponName.SetText(name);
   }
   public void setSpeed(float speed) {
-    WeaponSpeed.SetText((speed * 10).ToString());
+    WeaponSpeed.SetText((1 / speed).ToString("F1"));
   }
   public void setDamage(float damage) {
     WeaponDamage.SetText(damage.ToString());

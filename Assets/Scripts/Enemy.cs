@@ -54,7 +54,9 @@ public class Enemy : MonoBehaviour, IDamageable {
     SpriteRenderer[] sprites = spriteParent.GetComponentsInChildren<SpriteRenderer>();
 
     for (int i = 0; i < sprites.Length; i++) {
-      sprites[i].material.DOFloat(1, "_HitEffectBlend", .1f).SetLoops(2, LoopType.Yoyo);
+      DOTween.Kill(sprites[i].material);
+      sprites[i].material.SetFloat("_HitEffectBlend", 0);
+      sprites[i].material.DOFloat(1, "_HitEffectBlend", .1f).SetLoops(2, LoopType.Yoyo).SetId("hit");
     }
   }
 }
