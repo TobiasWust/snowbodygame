@@ -4,17 +4,15 @@ using DG.Tweening;
 
 public class PlayerMover : MonoBehaviour, IDamageable {
   public float speed;
-  private int health;
-
   public Image[] hearts;
   public Sprite fullHeart;
   public Sprite emptyHeart;
-
   public Animator hurtPanel;
-
   public Weapon startWeapon;
-  private WeaponPanel weaponPanel;
 
+  int health;
+  bool isInvincible;
+  WeaponPanel weaponPanel;
   Animator camAnim;
   Rigidbody2D rb;
   Animator anim;
@@ -64,6 +62,9 @@ public class PlayerMover : MonoBehaviour, IDamageable {
   }
 
   public void takeDamage(int damageAmount) {
+    if (isInvincible) return;
+    isInvincible = true;
+    Invoke("stopInvincible", .5f);
     health -= damageAmount;
     camAnim.SetTrigger("shake");
     hurtPanel.SetTrigger("hurt");
@@ -74,6 +75,11 @@ public class PlayerMover : MonoBehaviour, IDamageable {
       Destroy(gameObject);
     }
   }
+
+  private void stopInvincible() {
+    isInvincible = false;
+  }
+
 
   public void equipWeapon(Weapon weapon) {
 

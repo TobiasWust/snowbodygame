@@ -13,8 +13,6 @@ public class Enemy : MonoBehaviour, IDamageable {
     public int pickupChance;
   }
 
-  [SerializeField] GameObject spriteParent;
-
   [HideInInspector]
   public Transform player;
 
@@ -51,7 +49,7 @@ public class Enemy : MonoBehaviour, IDamageable {
   }
 
   void hitShaderEffect() {
-    SpriteRenderer[] sprites = spriteParent.GetComponentsInChildren<SpriteRenderer>();
+    SpriteRenderer[] sprites = gameObject.GetComponentsInChildren<SpriteRenderer>();
 
     for (int i = 0; i < sprites.Length; i++) {
       DOTween.Kill(sprites[i].material);

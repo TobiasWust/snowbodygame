@@ -152,7 +152,7 @@ MonoBehaviour:
   spriteParent: {fileID: 3532036123111649218}
   player: {fileID: 0}
   drops: []
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 30688931311797316, guid: b2f283a5185c5ec47a4890910d92a02a, type: 3}
   stopDistance: 4
   shotPoint: {fileID: 759402937199873527}
   enemyProjectile: {fileID: 1910939002463419783, guid: 3ef16878897fb3a4a88b9d2137d9503f, type: 3}

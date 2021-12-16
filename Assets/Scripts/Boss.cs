@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Boss : MonoBehaviour, IDamageable {
   public int health;
@@ -22,6 +23,7 @@ public class Boss : MonoBehaviour, IDamageable {
   public void takeDamage(int damageAmount) {
     health -= damageAmount;
 
+    hitShaderEffect();
     updateHealthUI(health);
 
 
@@ -61,5 +63,15 @@ public class Boss : MonoBehaviour, IDamageable {
   public void explodeEvent() {
     camAnim.SetTrigger("shake");
     Instantiate(Explosion, transform.position, transform.rotation);
+  }
+
+  void hitShaderEffect() {
+    SpriteRenderer[] sprites = gameObject.GetComponentsInChildren<SpriteRenderer>();
+
+    for (int i = 0; i < sprites.Length; i++) {
+      DOTween.Kill(sprites[i].material);
+      sprites[i].material.SetFloat("_HitEffectBlend", 0);
+      sprites[i].material.DOFloat(1, "_HitEffectBlend", .1f).SetLoops(2, LoopType.Yoyo).SetId("hit");
+    }
   }
 }

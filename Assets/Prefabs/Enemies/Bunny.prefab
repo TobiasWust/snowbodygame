@@ -26,12 +26,9 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4137011441350113804}
-  - {fileID: 4137011441949405754}
-  - {fileID: 4137011441923574946}
+  m_Children: []
   m_Father: {fileID: 4137011441266426862}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4137011440641889582
 GameObject:
@@ -58,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4137011440641889582}
   m_LocalRotation: {x: -0, y: -0, z: 0.047532674, w: 0.9988697}
-  m_LocalPosition: {x: -0.086, y: 0.146, z: 0}
+  m_LocalPosition: {x: -0.085999995, y: 0.146, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4137011441949405754}
@@ -148,6 +145,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6354910161094903430}
+  - {fileID: 4137011441350113804}
+  - {fileID: 4137011441949405754}
+  - {fileID: 4137011441923574946}
   - {fileID: 7580579797276526384}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -234,10 +234,15 @@ MonoBehaviour:
   speed: 3
   timeBetweenAttacks: 5
   damage: 1
-  spriteParent: {fileID: 2000006836125557419}
+  spriteParent: {fileID: 0}
+  spriteParents:
+  - {fileID: 4137011441350113805}
+  - {fileID: 4137011441949405755}
+  - {fileID: 4137011441923574947}
+  - {fileID: 2000006836125557419}
   player: {fileID: 0}
   drops: []
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 30688931311797316, guid: b2f283a5185c5ec47a4890910d92a02a, type: 3}
   stopDistance: 2
   attackDuration: 1
 --- !u!114 &4321000929809206631
@@ -280,8 +285,8 @@ Transform:
   m_LocalPosition: {x: 0.1743055, y: -0.011995375, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 7580579797276526384}
-  m_RootOrder: 0
+  m_Father: {fileID: 4137011441266426862}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4137011441350113811
 SpriteRenderer:
@@ -362,8 +367,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 7580579797276526384}
-  m_RootOrder: 2
+  m_Father: {fileID: 4137011441266426862}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4137011441923574945
 SpriteRenderer:
@@ -445,8 +450,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4137011440641889581}
-  m_Father: {fileID: 7580579797276526384}
-  m_RootOrder: 1
+  m_Father: {fileID: 4137011441266426862}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4137011441949405753
 SpriteRenderer:

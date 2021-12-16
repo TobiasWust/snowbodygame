@@ -203,7 +203,7 @@ MonoBehaviour:
   spriteParent: {fileID: 6936232329027983099}
   player: {fileID: 0}
   drops: []
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 1411435310836800582, guid: a4c9a29c2288f5341b50d0b52f9b4d43, type: 3}
   minX: -18
   minY: -9
   maxX: 18
