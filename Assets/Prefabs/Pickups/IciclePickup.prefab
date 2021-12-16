@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4215797169099576972}
   - component: {fileID: 7661455868268262010}
+  - component: {fileID: 664839967070630396}
   m_Layer: 9
   m_Name: Icicle
   m_TagString: Untagged
@@ -82,6 +83,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &664839967070630396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986382140505341459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfed80a7060dc3e49956b49fb10804c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2336384390647509550
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,6 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponToEquip: {fileID: 5821011391838969980, guid: 65eceed05c178d7469c41ba7f73d67dc, type: 3}
+  pickUpEffect: {fileID: 0}
 --- !u!61 &9213246181250865417
 BoxCollider2D:
   m_ObjectHideFlags: 0
