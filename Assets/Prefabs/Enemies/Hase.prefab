@@ -274,7 +274,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3268935172828784705}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 0.19, z: -7.6400266}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5121655, y: 0.5121655, z: 0.5121655}
   m_Children:
   - {fileID: 3268935173408805395}
@@ -373,6 +373,7 @@ MonoBehaviour:
     - {fileID: 8209001304650922965, guid: 79d48d1a0f6d77746b67b7d13801e2d9, type: 3}
     - {fileID: 8209001304650922965, guid: 83558c0fbbe08d744a42642c43a6b696, type: 3}
     pickupChance: 10
+  deathEffect: {fileID: 30688931311797316, guid: b2f283a5185c5ec47a4890910d92a02a, type: 3}
   stopDistance: 2
   attackDuration: 0.5
 --- !u!1 &3268935172888298356

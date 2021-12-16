@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 342485279247032032}
   - component: {fileID: 342485279247032035}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LegL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 342485279307530439}
   - component: {fileID: 342485279307530438}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 342485279381289671}
   - component: {fileID: 342485279381289670}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ArmL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1826,7 +1826,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 342485280070964655}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Heads
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2032,7 +2032,7 @@ GameObject:
   m_Component:
   - component: {fileID: 342485280247638019}
   - component: {fileID: 342485280247638018}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2360,10 +2360,12 @@ GameObject:
   m_Component:
   - component: {fileID: 342485280435002994}
   - component: {fileID: 342485280435002995}
-  - component: {fileID: 7300369379820741221}
-  m_Layer: 0
+  - component: {fileID: 2299795517069362491}
+  - component: {fileID: 3989053827342119379}
+  - component: {fileID: 9119756231072884882}
+  m_Layer: 7
   m_Name: Masterbunny
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2406,7 +2408,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7300369379820741221
+--- !u!114 &2299795517069362491
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2415,15 +2417,65 @@ MonoBehaviour:
   m_GameObject: {fileID: 342485280435002997}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8971ebe411c85a4faed9e22f588f6fa, type: 3}
+  m_Script: {fileID: 11500000, guid: fdd06dd0afd768c44a188f79f3fb8b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
-  speed: 2
-  timeBetweenAttacks: 2
-  damage: 2
-  player: {fileID: 0}
-  drops: []
+  health: 100
+  damage: 1
+  enemies:
+  - {fileID: 2579045782092027021, guid: 67c17cd5a5ad58742ab04cd4a881d785, type: 3}
+  - {fileID: 6445761429746716368, guid: e9676dc82887ebf43ae513e96e838ea2, type: 3}
+  - {fileID: 6933392479656921236, guid: d767e0d4b2c481e4bb29c00b936a6067, type: 3}
+  - {fileID: 2661154845426222960, guid: 37344996965edeb41af25fbed8666a79, type: 3}
+  - {fileID: 2579045782092027021, guid: 67c17cd5a5ad58742ab04cd4a881d785, type: 3}
+  landingEffect: {fileID: 8827957397697703345, guid: 1f0981de947995c4c998948171660e2f, type: 3}
+--- !u!50 &3989053827342119379
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342485280435002997}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 100
+  m_LinearDrag: 1
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!61 &9119756231072884882
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342485280435002997}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.014917314, y: 0.12282479}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2944642, y: 1.8753331}
+  m_EdgeRadius: 0
 --- !u!1 &342485280573691369
 GameObject:
   m_ObjectHideFlags: 0
@@ -2434,7 +2486,7 @@ GameObject:
   m_Component:
   - component: {fileID: 342485280573691351}
   - component: {fileID: 342485280573691350}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EarR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2765,7 +2817,7 @@ GameObject:
   m_Component:
   - component: {fileID: 342485280706137824}
   - component: {fileID: 342485280706137825}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bauch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2929,7 +2981,7 @@ GameObject:
   m_Component:
   - component: {fileID: 342485280770092204}
   - component: {fileID: 342485280770092207}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LegR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3128,7 +3180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 342485280796689715}
   - component: {fileID: 342485280796689714}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ArmR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3456,7 +3508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 342485280888964570}
   - component: {fileID: 342485280888964573}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3711,7 +3763,7 @@ GameObject:
   m_Component:
   - component: {fileID: 342485281013162992}
   - component: {fileID: 342485281013162995}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EarL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4023,7 +4075,7 @@ GameObject:
   m_Component:
   - component: {fileID: 342485281334200170}
   - component: {fileID: 342485281334200173}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Belly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4105,7 +4157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3434887431091660098}
   - component: {fileID: 3104305651335098048}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: dropshadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

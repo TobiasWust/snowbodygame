@@ -204,8 +204,9 @@ MonoBehaviour:
   timeBetweenAttacks: 5
   damage: 1
   player: {fileID: 0}
+  drops: []
   stopDistance: 2
-  attackDuration: 0
+  attackDuration: 1
 --- !u!114 &4321000929809206631
 MonoBehaviour:
   m_ObjectHideFlags: 0

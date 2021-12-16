@@ -21,11 +21,13 @@ public class Enemy : MonoBehaviour, IDamageable {
     player = GameObject.FindGameObjectWithTag("Player").transform;
   }
 
+  public GameObject deathEffect;
+
   public void takeDamage(int damageAmount) {
     health -= damageAmount;
 
     if (health <= 0) {
-
+      if (deathEffect) Instantiate(deathEffect, transform.position, Quaternion.identity);
       throwDrop();
       Destroy(gameObject);
     }

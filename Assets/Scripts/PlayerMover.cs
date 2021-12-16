@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class PlayerMover : MonoBehaviour, IDamageable {
   public float speed;
@@ -95,5 +96,11 @@ public class PlayerMover : MonoBehaviour, IDamageable {
     // Destroy(oldWeapon);
   }
 
-  private void test() { }
+  void OnCollisionEnter2D(Collision2D other) {
+    // throwback on hit
+    if (other.gameObject.tag != "Enemy") return;
+    Vector3 dir = (other.transform.position - transform.position).normalized;
+    Vector3 target = (transform.position - dir * 2);
+    transform.DOLocalJump(target, 1f, 1, .5f);
+  }
 }
