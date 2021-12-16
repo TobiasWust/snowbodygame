@@ -2429,6 +2429,7 @@ MonoBehaviour:
   - {fileID: 2661154845426222960, guid: 37344996965edeb41af25fbed8666a79, type: 3}
   - {fileID: 2579045782092027021, guid: 67c17cd5a5ad58742ab04cd4a881d785, type: 3}
   landingEffect: {fileID: 8827957397697703345, guid: 1f0981de947995c4c998948171660e2f, type: 3}
+  Explosion: {fileID: 1504000568672874228, guid: 66957b5970bf681488df0050b4376472, type: 3}
 --- !u!50 &3989053827342119379
 Rigidbody2D:
   serializedVersion: 4

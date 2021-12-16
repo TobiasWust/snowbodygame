@@ -112,6 +112,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: exploding
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -215,8 +221,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  isBursting: 1
-  Burst: {fileID: 1504000568672874228, guid: 66957b5970bf681488df0050b4376472, type: 3}
 --- !u!1107 &3632380247890507199
 AnimatorStateMachine:
   serializedVersion: 6

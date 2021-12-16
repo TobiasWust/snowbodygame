@@ -7,6 +7,7 @@ public class Boss : MonoBehaviour, IDamageable {
   public int damage;
   public Enemy[] enemies;
   public GameObject landingEffect;
+  public GameObject Explosion;
   int maxHealth;
 
   Animator camAnim;
@@ -23,7 +24,12 @@ public class Boss : MonoBehaviour, IDamageable {
 
     updateHealthUI(health);
 
-    if (health <= maxHealth * .5f) {
+
+    if (health <= maxHealth * .3f) {
+      anim.SetBool("exploding", true);
+    }
+
+    if (health <= maxHealth * .6f) {
       anim.SetBool("stage2", true);
     }
 
@@ -50,5 +56,10 @@ public class Boss : MonoBehaviour, IDamageable {
   public void LandingEvent() {
     camAnim.SetTrigger("shake");
     Instantiate(landingEffect, transform.position, transform.rotation);
+  }
+
+  public void explodeEvent() {
+    camAnim.SetTrigger("shake");
+    Instantiate(Explosion, transform.position, transform.rotation);
   }
 }
