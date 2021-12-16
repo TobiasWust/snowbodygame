@@ -1,4 +1,5 @@
 using UnityEngine;
+using DG.Tweening;
 
 public class Enemy : MonoBehaviour, IDamageable {
   public int health;
@@ -11,6 +12,8 @@ public class Enemy : MonoBehaviour, IDamageable {
     public GameObject[] Pickups;
     public int pickupChance;
   }
+
+  [SerializeField] GameObject spriteParent;
 
   [HideInInspector]
   public Transform player;
@@ -25,6 +28,8 @@ public class Enemy : MonoBehaviour, IDamageable {
 
   public void takeDamage(int damageAmount) {
     health -= damageAmount;
+
+    hitShaderEffect();
 
     if (health <= 0) {
       if (deathEffect) Instantiate(deathEffect, transform.position, Quaternion.identity);
@@ -42,6 +47,14 @@ public class Enemy : MonoBehaviour, IDamageable {
 
         Instantiate(randomPickup, transform.position + randomPosition, transform.rotation);
       }
+    }
+  }
+
+  void hitShaderEffect() {
+    SpriteRenderer[] sprites = spriteParent.GetComponentsInChildren<SpriteRenderer>();
+
+    for (int i = 0; i < sprites.Length; i++) {
+      sprites[i].material.DOFloat(1, "_HitEffectBlend", .1f).SetLoops(2, LoopType.Yoyo);
     }
   }
 }
