@@ -20,6 +20,7 @@ public class Boss : MonoBehaviour, IDamageable {
 
   float spawnTime;
   int maxHealth;
+  SceneTransitions sceneTransitions;
 
   Animator camAnim;
   Animator anim;
@@ -30,6 +31,7 @@ public class Boss : MonoBehaviour, IDamageable {
     anim = GetComponent<Animator>();
     maxHealth = health;
     camAnim = GameObject.FindGameObjectWithTag("VCam").GetComponent<Animator>();
+    sceneTransitions = FindObjectOfType<SceneTransitions>(); //is there a better way?
 
     initializeHealthBar();
   }
@@ -48,15 +50,11 @@ public class Boss : MonoBehaviour, IDamageable {
     }
 
     if (health <= 0) {
-      Debug.Log("Boss dies :)");
-      Destroy(gameObject);
+      bossDefeated();
+      return; // avoid enemyspawn
     }
 
-    if (Time.time > spawnTime) {
-      Enemy randomEnemy = enemies[Random.Range(0, enemies.Length)];
-      Instantiate(randomEnemy, transform.position, transform.rotation);
-      spawnTime = Time.time + timeBetweenSpawns;
-    }
+    spawnRandomEnemy();
   }
 
   private void OnCollisionEnter2D(Collision2D other) {
@@ -98,5 +96,24 @@ public class Boss : MonoBehaviour, IDamageable {
     GameObject _healthBar = Instantiate(HealthBarPrefab);
     Healthbar = _healthBar.GetComponent<Bosslife>();
     Healthbar.transform.SetParent(GameObject.FindGameObjectWithTag("UI").transform, false);
+  }
+
+  void bossDefeated() {
+    // kill all enemies;
+    Debug.Log("got here");
+    Enemy[] enemies = GameObject.FindObjectsOfType<Enemy>(); // probably not most performant but should be ok
+    foreach (var enemy in enemies) {
+      enemy.takeDamage(100);
+    }
+    Destroy(gameObject);
+    sceneTransitions.LoadScene("MainMenu"); // todo replace with win. add timeout
+  }
+
+  void spawnRandomEnemy() {
+    if (Time.time > spawnTime) {
+      Enemy randomEnemy = enemies[Random.Range(0, enemies.Length)];
+      Instantiate(randomEnemy, transform.position, transform.rotation);
+      spawnTime = Time.time + timeBetweenSpawns;
+    }
   }
 }

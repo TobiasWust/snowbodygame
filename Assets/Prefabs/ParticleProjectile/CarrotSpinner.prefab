@@ -4858,6 +4858,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1504000567597424800}
     m_Modifications:
+    - target: {fileID: 7529074692893120341, guid: 841c83414f4091f4abdd159b2632d532, type: 3}
+      propertyPath: stopAction
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7529074692893120341, guid: 841c83414f4091f4abdd159b2632d532, type: 3}
+      propertyPath: autoRandomSeed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7529074692893120343, guid: 841c83414f4091f4abdd159b2632d532, type: 3}
       propertyPath: m_Name
       value: CarotExplosion
