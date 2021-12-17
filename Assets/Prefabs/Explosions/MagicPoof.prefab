@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 1673196588206180024}
   - component: {fileID: 2453656863209304518}
   - component: {fileID: 1206147981520487579}
+  - component: {fileID: 6569275253810998271}
   m_Layer: 0
   m_Name: MagicPoof
   m_TagString: Untagged
@@ -4893,3 +4894,16 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &6569275253810998271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8343133384983144410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8963b0526d6ea6d4bbf93e4110f582ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  root: {fileID: 1411435310836800582}

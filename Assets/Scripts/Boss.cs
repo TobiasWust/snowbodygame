@@ -5,17 +5,19 @@ using UnityEngine.UI;
 using DG.Tweening;
 
 public class Boss : MonoBehaviour, IDamageable {
-  public int health;
-  public int damage;
-  public Enemy[] enemies;
-  public GameObject landingEffect;
-  public GameObject Explosion;
-  public GameObject HealthBarPrefab;
+  [SerializeField] Enemy[] enemies;
+  [SerializeField] GameObject[] CarrotExplosions;
+  [SerializeField] GameObject landingEffect;
+  [SerializeField] int damage;
+  [SerializeField] GameObject HealthBarPrefab;
+  [SerializeField] int timeBetweenSpawns;
+  [SerializeField] float stageTwoPercent;
+  [SerializeField] int carrotExplosionOffset;
+  [SerializeField] int health;
 
   [HideInInspector]
   public int explosions;
 
-  [SerializeField] int timeBetweenSpawns;
   float spawnTime;
   int maxHealth;
 
@@ -38,10 +40,10 @@ public class Boss : MonoBehaviour, IDamageable {
     hitShaderEffect();
     updateHealthUI(health);
 
-    explosions = Mathf.RoundToInt((1 - ((float)health / maxHealth)) * 10) - 3;
+    explosions = Mathf.RoundToInt((1 - ((float)health / maxHealth)) * 10) - carrotExplosionOffset;
     anim.SetInteger("explosions", explosions);
 
-    if (health <= maxHealth * .5f) {
+    if (health <= maxHealth * stageTwoPercent) {
       anim.SetBool("stage2", true);
     }
 
@@ -75,7 +77,8 @@ public class Boss : MonoBehaviour, IDamageable {
 
   public void explodeEvent() {
     camAnim.SetTrigger("shake");
-    ParticleSystem particles = Instantiate(Explosion, transform.position, Quaternion.Euler(0, 0, Random.Range(0, 30))).GetComponentInChildren<ParticleSystem>();
+    GameObject RandomCarrotExplosion = CarrotExplosions[Random.Range(0, CarrotExplosions.Length)];
+    ParticleSystem particles = Instantiate(RandomCarrotExplosion, transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360))).GetComponentInChildren<ParticleSystem>();
     var collision = particles.collision;
     collision.collidesWith = collision.collidesWith & ~(1 << 7); //magic to toggle layer;
 

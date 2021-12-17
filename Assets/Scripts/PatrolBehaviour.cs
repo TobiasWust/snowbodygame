@@ -20,7 +20,6 @@ public class PatrolBehaviour : StateMachineBehaviour {
     animator.transform.position = Vector2.MoveTowards(animator.transform.position, patrolPoints[randomPoint].transform.position, speed * Time.deltaTime);
 
     if (Vector2.Distance(animator.transform.position, patrolPoints[randomPoint].transform.position) < .1f) {
-      Debug.Log("hä");
       randomPoint = Random.Range(0, patrolPoints.Length);
       if (animator.GetInteger("explosions") > 0) animator.SetTrigger("explode");
     }

@@ -12,7 +12,6 @@ public class Projectile : MonoBehaviour {
 
   private void Start() {
     Invoke("DestroyProjectile", lifeTime);
-    Debug.Log(gameObject.layer);
     gameObject.layer = layer;
   }
 
