@@ -100,7 +100,7 @@ MonoBehaviour:
   speed: 50
   lifeTime: 0.2
   Explosion: {fileID: 4383126461203979861, guid: e1ab3922675e6884e9bc396d3abde055, type: 3}
-  damage: 10
+  damage: 7
   HitEffect: {fileID: 0}
   layer: 0
 --- !u!61 &2549777247708618983

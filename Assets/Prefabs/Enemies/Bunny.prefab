@@ -241,11 +241,11 @@ MonoBehaviour:
     pickupChance: 15
   - Pickups:
     - {fileID: 8209001304650922965, guid: e83b29ee68972f641b6b154544f9159c, type: 3}
-    - {fileID: 7245411885338495738, guid: a27f68380b512df4b8cd9e42d9f09b32, type: 3}
+    - {fileID: 8209001304650922965, guid: 9ffe7807c69ce434f91939c4fffb5d24, type: 3}
     pickupChance: 3
   - Pickups:
-    - {fileID: 7245411885338495738, guid: 65eceed05c178d7469c41ba7f73d67dc, type: 3}
-    - {fileID: 7245411885338495738, guid: a27f68380b512df4b8cd9e42d9f09b32, type: 3}
+    - {fileID: 8209001304650922965, guid: 9022a93be5abf1049a31c399cefafe1a, type: 3}
+    - {fileID: 7245411885338495738, guid: 03b52a458f9105144b97a9afa118a60a, type: 3}
     pickupChance: 1
   deathEffect: {fileID: 30688931311797316, guid: b2f283a5185c5ec47a4890910d92a02a, type: 3}
   stopDistance: 2

@@ -75,7 +75,10 @@ public class Boss : MonoBehaviour, IDamageable {
 
   public void explodeEvent() {
     camAnim.SetTrigger("shake");
-    Instantiate(Explosion, transform.position, Quaternion.Euler(0, 0, Random.Range(0, 30)));
+    ParticleSystem particles = Instantiate(Explosion, transform.position, Quaternion.Euler(0, 0, Random.Range(0, 30))).GetComponentInChildren<ParticleSystem>();
+    var collision = particles.collision;
+    collision.collidesWith = collision.collidesWith & ~(1 << 7); //magic to toggle layer;
+
   }
 
   void hitShaderEffect() {
