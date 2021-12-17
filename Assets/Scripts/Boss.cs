@@ -10,7 +10,7 @@ public class Boss : MonoBehaviour, IDamageable {
   public Enemy[] enemies;
   public GameObject landingEffect;
   public GameObject Explosion;
-  public Slider HealthBar;
+  public GameObject HealthBarPrefab;
 
   [HideInInspector]
   public int explosions;
@@ -22,10 +22,14 @@ public class Boss : MonoBehaviour, IDamageable {
   Animator camAnim;
   Animator anim;
 
+  Bosslife Healthbar;
+
   void Start() {
     anim = GetComponent<Animator>();
     maxHealth = health;
     camAnim = GameObject.FindGameObjectWithTag("VCam").GetComponent<Animator>();
+
+    initializeHealthBar();
   }
 
   public void takeDamage(int damageAmount) {
@@ -61,7 +65,7 @@ public class Boss : MonoBehaviour, IDamageable {
   }
 
   void updateHealthUI(int health) {
-    if (HealthBar) HealthBar.GetComponent<Bosslife>().setHealth((float)health / (float)maxHealth);
+    if (Healthbar) Healthbar.setHealth((float)health / (float)maxHealth);
   }
 
   public void LandingEvent() {
@@ -82,5 +86,11 @@ public class Boss : MonoBehaviour, IDamageable {
       sprites[i].material.SetFloat("_HitEffectBlend", 0);
       sprites[i].material.DOFloat(1, "_HitEffectBlend", .1f).SetLoops(2, LoopType.Yoyo).SetId("hit");
     }
+  }
+
+  void initializeHealthBar() {
+    GameObject _healthBar = Instantiate(HealthBarPrefab);
+    Healthbar = _healthBar.GetComponent<Bosslife>();
+    Healthbar.transform.SetParent(GameObject.FindGameObjectWithTag("UI").transform, false);
   }
 }

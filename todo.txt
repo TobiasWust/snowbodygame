@@ -1,6 +1,6 @@
-more weapons
-more enemy types (slow buff, evil tower)
-friendly bunnys
+one more weapon
+more enemy types (slow, buff, evil tower)
 main menu
 loose menu
 options
+boss always spawn healthbar

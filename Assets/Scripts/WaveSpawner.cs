@@ -17,7 +17,6 @@ public class WaveSpawner : MonoBehaviour {
   public float timeBetweenWaves;
 
   public GameObject boss;
-  public GameObject bosslife;
   public Transform bossSpawnPoint;
 
   private Wave currentWave;
@@ -61,11 +60,7 @@ public class WaveSpawner : MonoBehaviour {
         currentWaveIndex++;
         StartCoroutine(StartNextWave(currentWaveIndex));
       } else {
-        GameObject HealthBar = Instantiate(bosslife);
-        HealthBar.transform.SetParent(GameObject.FindGameObjectWithTag("UI").transform, false);
-
         GameObject BossSpawn = Instantiate(boss, bossSpawnPoint.position, bossSpawnPoint.rotation);
-        BossSpawn.GetComponent<Boss>().HealthBar = HealthBar.GetComponent<Slider>();
       }
     }
   }

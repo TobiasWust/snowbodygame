@@ -9,6 +9,9 @@ public class Bosslife : MonoBehaviour {
   public void setHealth(float health) {
     Slider slider = gameObject.GetComponent<Slider>();
     slider.value = health;
-    if (healthEffect) Instantiate(healthEffect, slider.handleRect.position, Quaternion.identity);
+    if (healthEffect) {
+      GameObject splash = Instantiate(healthEffect, slider.handleRect.position, Quaternion.Euler(0, 0, -90));
+      splash.GetComponentInChildren<ParticleSystem>().GetComponent<Renderer>().sortingOrder = 101;
+    }
   }
 }

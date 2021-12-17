@@ -235,6 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthEffect: {fileID: 30688931311797316, guid: b2f283a5185c5ec47a4890910d92a02a, type: 3}
+  Strich: {fileID: 2230505638051452756, guid: 7b193b2f4e00994498320535ba9ac22b, type: 3}
 --- !u!1 &3721193391241170133
 GameObject:
   m_ObjectHideFlags: 0
