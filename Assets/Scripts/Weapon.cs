@@ -6,7 +6,9 @@ public class Weapon : MonoBehaviour {
   public GameObject projectile;
   public Transform shotPoint;
   public float timeBetweenShots;
-  public Pickup PickupObject;
+
+  [SerializeField] Pickup PickupObject;
+  [SerializeField] GameObject ShootEffect;
   Animator camAnim;
   float shotTime;
 
@@ -40,6 +42,7 @@ public class Weapon : MonoBehaviour {
 
     if (Input.GetButton("Fire1") && Time.time >= shotTime) {
       camAnim.SetTrigger("zoomShake");
+      if (ShootEffect) Instantiate(ShootEffect, shotPoint.position, transform.rotation);
       GameObject bullet = Instantiate(projectile, shotPoint.position, transform.rotation);
       bullet.layer = 6; // player layer to avoid self hitting
       shotTime = Time.time + timeBetweenShots;

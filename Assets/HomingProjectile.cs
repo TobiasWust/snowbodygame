@@ -5,11 +5,12 @@ using UnityEngine;
 public class HomingProjectile : Projectile {
   [SerializeField] Transform target;
 
-  private void Update() {
+  public override void Update() {
     if (target != null) {
       gameObject.GetComponent<FlipRunning>().target = target;
       transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     } else {
+      base.Update();
       FindClosest();
     }
   }

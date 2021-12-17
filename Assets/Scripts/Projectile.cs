@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour {
     Invoke("DestroyProjectile", lifeTime);
   }
 
-  private void Update() {
+  public virtual void Update() {
     transform.Translate(Vector3.up * speed * Time.deltaTime);
   }
 
