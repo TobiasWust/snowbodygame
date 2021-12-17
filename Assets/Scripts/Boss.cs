@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using DG.Tweening;
 
 public class Boss : MonoBehaviour, IDamageable {
@@ -9,6 +10,11 @@ public class Boss : MonoBehaviour, IDamageable {
   public Enemy[] enemies;
   public GameObject landingEffect;
   public GameObject Explosion;
+  public Slider HealthBar;
+
+  [HideInInspector]
+  public int explosions;
+
   [SerializeField] int timeBetweenSpawns;
   float spawnTime;
   int maxHealth;
@@ -28,12 +34,10 @@ public class Boss : MonoBehaviour, IDamageable {
     hitShaderEffect();
     updateHealthUI(health);
 
+    explosions = Mathf.RoundToInt((1 - ((float)health / maxHealth)) * 10);
+    anim.SetInteger("explosions", explosions);
 
-    if (health <= maxHealth * .3f) {
-      anim.SetBool("exploding", true);
-    }
-
-    if (health <= maxHealth * .6f) {
+    if (health <= maxHealth * .5f) {
       anim.SetBool("stage2", true);
     }
 
@@ -51,13 +55,13 @@ public class Boss : MonoBehaviour, IDamageable {
 
   private void OnCollisionEnter2D(Collision2D other) {
     if (other.gameObject.tag == "Player") {
-      other.gameObject.GetComponent<PlayerMover>().takeDamage(damage);
       anim.SetBool("stage2", false);
+      other.gameObject.GetComponent<PlayerMover>().takeDamage(damage);
     }
   }
 
   void updateHealthUI(int health) {
-    Debug.Log("Boss health is " + health);
+    HealthBar.GetComponent<Bosslife>().setHealth((float)health / (float)maxHealth);
   }
 
   public void LandingEvent() {
@@ -67,7 +71,7 @@ public class Boss : MonoBehaviour, IDamageable {
 
   public void explodeEvent() {
     camAnim.SetTrigger("shake");
-    Instantiate(Explosion, transform.position, transform.rotation);
+    Instantiate(Explosion, transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360)));
   }
 
   void hitShaderEffect() {
