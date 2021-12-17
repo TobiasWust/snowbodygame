@@ -3,3 +3,4 @@ more enemy types (slow, buff, evil tower)
 main menu
 loose menu
 options
+move damage parameter to weapen

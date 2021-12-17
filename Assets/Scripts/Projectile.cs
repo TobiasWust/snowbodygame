@@ -12,7 +12,7 @@ public class Projectile : MonoBehaviour {
 
   private void Start() {
     Invoke("DestroyProjectile", lifeTime);
-    gameObject.layer = 6;
+    gameObject.layer = layer;
   }
 
   public virtual void Update() {
