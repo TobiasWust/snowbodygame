@@ -35,7 +35,7 @@ public class RangedEnemy : Enemy {
 
     shotPoint.rotation = rotation;
 
-    GameObject bullet = Instantiate(enemyProjectile, shotPoint.position, shotPoint.rotation);
+    Projectile bullet = Instantiate(enemyProjectile, shotPoint.position, shotPoint.rotation).GetComponent<Projectile>();
     bullet.layer = 7; // enemies don't hit enemies;
 
   }

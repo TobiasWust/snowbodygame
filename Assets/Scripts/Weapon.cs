@@ -46,7 +46,6 @@ public class Weapon : MonoBehaviour {
         if (ShootEffect) Instantiate(ShootEffect, shotPoint.position, transform.rotation);
         Projectile bullet = Instantiate(projectile, shotPoint.position, shotPoint.rotation).GetComponent<Projectile>();
         bullet.layer = 6; // player layer to avoid self hitting
-        ParticleSystem particles = bullet.Explosion.GetComponent<ParticleSystem>();
       }
       shotTime = Time.time + timeBetweenShots;
     }

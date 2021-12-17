@@ -211,6 +211,12 @@ MonoBehaviour:
   - Pickups:
     - {fileID: 8209001304650922965, guid: 83558c0fbbe08d744a42642c43a6b696, type: 3}
     pickupChance: 10
+  - Pickups:
+    - {fileID: 8209001304650922965, guid: 9ffe7807c69ce434f91939c4fffb5d24, type: 3}
+    - {fileID: 8209001304650922965, guid: 6dcda2535193f42499e2631b32823df2, type: 3}
+    - {fileID: 8209001304650922965, guid: 9022a93be5abf1049a31c399cefafe1a, type: 3}
+    - {fileID: 8209001304650922965, guid: 79d48d1a0f6d77746b67b7d13801e2d9, type: 3}
+    pickupChance: 5
   deathEffect: {fileID: 1411435310836800582, guid: a4c9a29c2288f5341b50d0b52f9b4d43, type: 3}
   minX: -18
   minY: -9

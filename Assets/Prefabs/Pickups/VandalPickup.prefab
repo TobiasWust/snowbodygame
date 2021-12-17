@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6374918223937075925}
   - component: {fileID: 4721656033966381936}
+  - component: {fileID: 6213562958529888522}
   m_Layer: 9
   m_Name: vandal
   m_TagString: Untagged
@@ -82,6 +83,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6213562958529888522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590843963399846005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfed80a7060dc3e49956b49fb10804c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2336384390647509550
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,6 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponToEquip: {fileID: 2414016134946833836, guid: e3a96f297caf1ab4c8350a0382e01e0a, type: 3}
+  pickUpEffect: {fileID: 0}
 --- !u!61 &9213246181250865417
 BoxCollider2D:
   m_ObjectHideFlags: 0

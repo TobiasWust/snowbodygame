@@ -149,6 +149,6 @@ MonoBehaviour:
   projectile: {fileID: 4085746976801397482, guid: a815e0fdd02c7bd46b9daabb6f9a6583, type: 3}
   shotPoints:
   - {fileID: 7090301546085829119}
-  timeBetweenShots: 1.5
+  timeBetweenShots: 2
   PickupObject: {fileID: 0}
   ShootEffect: {fileID: 0}

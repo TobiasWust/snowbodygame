@@ -12,6 +12,7 @@ public class Projectile : MonoBehaviour {
 
   private void Start() {
     Invoke("DestroyProjectile", lifeTime);
+    Debug.Log(gameObject.layer);
     gameObject.layer = layer;
   }
 
@@ -29,7 +30,7 @@ public class Projectile : MonoBehaviour {
   }
 
   void DestroyProjectile() {
-    if (Explosion) {
+    if (Explosion != null) {
       ParticleSystem particles = Instantiate(Explosion, transform.position, transform.rotation).GetComponentInChildren<ParticleSystem>();
       var collision = particles.collision;
       collision.collidesWith = collision.collidesWith & ~(1 << layer); //magic to toggle layer;
