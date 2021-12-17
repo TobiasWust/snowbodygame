@@ -44,8 +44,9 @@ public class Weapon : MonoBehaviour {
       camAnim.SetTrigger("zoomShake");
       foreach (Transform shotPoint in shotPoints) {
         if (ShootEffect) Instantiate(ShootEffect, shotPoint.position, transform.rotation);
-        GameObject bullet = Instantiate(projectile, shotPoint.position, shotPoint.rotation);
+        Projectile bullet = Instantiate(projectile, shotPoint.position, shotPoint.rotation).GetComponent<Projectile>();
         bullet.layer = 6; // player layer to avoid self hitting
+        ParticleSystem particles = bullet.Explosion.GetComponent<ParticleSystem>();
       }
       shotTime = Time.time + timeBetweenShots;
     }
