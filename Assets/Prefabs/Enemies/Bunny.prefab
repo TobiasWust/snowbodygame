@@ -234,14 +234,14 @@ MonoBehaviour:
   speed: 3
   timeBetweenAttacks: 5
   damage: 1
-  spriteParent: {fileID: 0}
-  spriteParents:
-  - {fileID: 4137011441350113805}
-  - {fileID: 4137011441949405755}
-  - {fileID: 4137011441923574947}
-  - {fileID: 2000006836125557419}
   player: {fileID: 0}
-  drops: []
+  drops:
+  - Pickups:
+    - {fileID: 2618655685933290494, guid: c53f6b5daa892824a824eeba123f711f, type: 3}
+    pickupChance: 10
+  - Pickups:
+    - {fileID: 8209001304650922965, guid: 66a3396582a99394b9ad637db5d72250, type: 3}
+    pickupChance: 5
   deathEffect: {fileID: 30688931311797316, guid: b2f283a5185c5ec47a4890910d92a02a, type: 3}
   stopDistance: 2
   attackDuration: 1
@@ -257,6 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d112dbf5904af414fae10bf1d1060371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!1 &4137011441350113805
 GameObject:
   m_ObjectHideFlags: 0

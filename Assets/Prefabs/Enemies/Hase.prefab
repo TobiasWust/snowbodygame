@@ -364,15 +364,16 @@ MonoBehaviour:
   speed: 2
   timeBetweenAttacks: 3
   damage: 1
-  spriteParent: {fileID: 3268935173408805392}
   player: {fileID: 0}
   drops:
   - Pickups:
     - {fileID: 2618655685933290494, guid: c53f6b5daa892824a824eeba123f711f, type: 3}
     pickupChance: 30
   - Pickups:
-    - {fileID: 8209001304650922965, guid: 79d48d1a0f6d77746b67b7d13801e2d9, type: 3}
     - {fileID: 8209001304650922965, guid: 83558c0fbbe08d744a42642c43a6b696, type: 3}
+    pickupChance: 20
+  - Pickups:
+    - {fileID: 8209001304650922965, guid: 79d48d1a0f6d77746b67b7d13801e2d9, type: 3}
     pickupChance: 10
   deathEffect: {fileID: 30688931311797316, guid: b2f283a5185c5ec47a4890910d92a02a, type: 3}
   stopDistance: 2
