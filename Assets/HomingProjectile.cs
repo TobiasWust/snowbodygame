@@ -11,8 +11,8 @@ public class HomingProjectile : Projectile {
       transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     } else {
       base.Update();
-      FindClosest();
     }
+    FindClosest();
   }
 
   void FindClosest() {

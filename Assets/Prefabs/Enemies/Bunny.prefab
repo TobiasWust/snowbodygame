@@ -240,8 +240,8 @@ MonoBehaviour:
     - {fileID: 2618655685933290494, guid: c53f6b5daa892824a824eeba123f711f, type: 3}
     pickupChance: 10
   - Pickups:
-    - {fileID: 8209001304650922965, guid: 66a3396582a99394b9ad637db5d72250, type: 3}
-    pickupChance: 5
+    - {fileID: 8209001304650922965, guid: e83b29ee68972f641b6b154544f9159c, type: 3}
+    pickupChance: 1
   deathEffect: {fileID: 30688931311797316, guid: b2f283a5185c5ec47a4890910d92a02a, type: 3}
   stopDistance: 2
   attackDuration: 1

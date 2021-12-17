@@ -9,6 +9,8 @@ public class Boss : MonoBehaviour, IDamageable {
   public Enemy[] enemies;
   public GameObject landingEffect;
   public GameObject Explosion;
+  [SerializeField] int timeBetweenSpawns;
+  float spawnTime;
   int maxHealth;
 
   Animator camAnim;
@@ -40,8 +42,11 @@ public class Boss : MonoBehaviour, IDamageable {
       Destroy(gameObject);
     }
 
-    Enemy randomEnemy = enemies[Random.Range(0, enemies.Length)];
-    Instantiate(randomEnemy, transform.position, transform.rotation);
+    if (Time.time > spawnTime) {
+      Enemy randomEnemy = enemies[Random.Range(0, enemies.Length)];
+      Instantiate(randomEnemy, transform.position, transform.rotation);
+      spawnTime = Time.time + timeBetweenSpawns;
+    }
   }
 
   private void OnCollisionEnter2D(Collision2D other) {

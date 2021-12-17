@@ -2420,7 +2420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdd06dd0afd768c44a188f79f3fb8b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 300
   damage: 1
   enemies:
   - {fileID: 2579045782092027021, guid: 67c17cd5a5ad58742ab04cd4a881d785, type: 3}
@@ -2430,6 +2430,7 @@ MonoBehaviour:
   - {fileID: 2579045782092027021, guid: 67c17cd5a5ad58742ab04cd4a881d785, type: 3}
   landingEffect: {fileID: 8827957397697703345, guid: 1f0981de947995c4c998948171660e2f, type: 3}
   Explosion: {fileID: 1504000568672874228, guid: 66957b5970bf681488df0050b4376472, type: 3}
+  timeBetweenSpawns: 2
 --- !u!50 &3989053827342119379
 Rigidbody2D:
   serializedVersion: 4

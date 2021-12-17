@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponToEquip: {fileID: 5821011391838969980, guid: daadd304ff17b4840a13954de765807d, type: 3}
+  pickUpEffect: {fileID: 0}
 --- !u!61 &9213246181250865417
 BoxCollider2D:
   m_ObjectHideFlags: 0
