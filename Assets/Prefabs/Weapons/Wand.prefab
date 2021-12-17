@@ -146,7 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf81b172dd838184e9fd933e1d33a94f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 4085746976801397482, guid: 7b80d137281d94146b5e32d6406233f7, type: 3}
-  shotPoint: {fileID: 7090301546085829119}
-  timeBetweenShots: 0.5
+  projectile: {fileID: 4085746976801397482, guid: a815e0fdd02c7bd46b9daabb6f9a6583, type: 3}
+  shotPoints:
+  - {fileID: 7090301546085829119}
+  timeBetweenShots: 1.5
   PickupObject: {fileID: 0}
+  ShootEffect: {fileID: 0}

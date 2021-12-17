@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour {
   public GameObject projectile;
-  public Transform shotPoint;
+  public Transform[] shotPoints;
   public float timeBetweenShots;
 
   [SerializeField] Pickup PickupObject;
@@ -42,9 +42,11 @@ public class Weapon : MonoBehaviour {
 
     if (Input.GetButton("Fire1") && Time.time >= shotTime) {
       camAnim.SetTrigger("zoomShake");
-      if (ShootEffect) Instantiate(ShootEffect, shotPoint.position, transform.rotation);
-      GameObject bullet = Instantiate(projectile, shotPoint.position, transform.rotation);
-      bullet.layer = 6; // player layer to avoid self hitting
+      foreach (Transform shotPoint in shotPoints) {
+        if (ShootEffect) Instantiate(ShootEffect, shotPoint.position, transform.rotation);
+        GameObject bullet = Instantiate(projectile, shotPoint.position, shotPoint.rotation);
+        bullet.layer = 6; // player layer to avoid self hitting
+      }
       shotTime = Time.time + timeBetweenShots;
     }
   }

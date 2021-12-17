@@ -147,7 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 4085746976801397482, guid: a83b364eda0035e45995ab7d0a1fb608, type: 3}
-  shotPoint: {fileID: 7090301546085829119}
+  shotPoints:
+  - {fileID: 7090301546085829119}
   timeBetweenShots: 0.5
   PickupObject: {fileID: 3052614088523084952, guid: 79d48d1a0f6d77746b67b7d13801e2d9, type: 3}
   ShootEffect: {fileID: 0}
