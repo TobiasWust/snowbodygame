@@ -34,7 +34,7 @@ public class Boss : MonoBehaviour, IDamageable {
     hitShaderEffect();
     updateHealthUI(health);
 
-    explosions = Mathf.RoundToInt((1 - ((float)health / maxHealth)) * 10);
+    explosions = Mathf.RoundToInt((1 - ((float)health / maxHealth)) * 10) - 3;
     anim.SetInteger("explosions", explosions);
 
     if (health <= maxHealth * .5f) {
@@ -61,7 +61,7 @@ public class Boss : MonoBehaviour, IDamageable {
   }
 
   void updateHealthUI(int health) {
-    HealthBar.GetComponent<Bosslife>().setHealth((float)health / (float)maxHealth);
+    if (HealthBar) HealthBar.GetComponent<Bosslife>().setHealth((float)health / (float)maxHealth);
   }
 
   public void LandingEvent() {
@@ -71,7 +71,7 @@ public class Boss : MonoBehaviour, IDamageable {
 
   public void explodeEvent() {
     camAnim.SetTrigger("shake");
-    Instantiate(Explosion, transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360)));
+    Instantiate(Explosion, transform.position, Quaternion.Euler(0, 0, Random.Range(0, 30)));
   }
 
   void hitShaderEffect() {
