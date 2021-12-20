@@ -1,4 +1,5 @@
 more enemy types (slow, buff, evil tower)
-main menu
+win menu
 loose menu
-options
+music
+sfx
