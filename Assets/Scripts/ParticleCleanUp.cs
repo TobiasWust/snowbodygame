@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class ParticleCleanUp : MonoBehaviour {
   public GameObject root;
+  public int delay = 0;
   private void OnDestroy() {
-    Destroy(root);
+    if (root == null) root = gameObject;
+    Destroy(root, delay);
   }
 }
