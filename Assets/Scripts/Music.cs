@@ -2,11 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicManager : MonoBehaviour {
+public class Music : MonoBehaviour {
+  private static Music instance;
+
   private AudioSource audioSource;
+
   private void Awake() {
-    DontDestroyOnLoad(transform.gameObject);
-    audioSource = GetComponent<AudioSource>();
+    if (instance == null) {
+      instance = this;
+      DontDestroyOnLoad(transform.gameObject);
+      audioSource = GetComponent<AudioSource>();
+    } else Destroy(gameObject);
   }
 
   public void PlayMusic() {
@@ -16,9 +22,5 @@ public class MusicManager : MonoBehaviour {
 
   public void StopMusic() {
     audioSource.Stop();
-  }
-
-  public void setVolume(float volume) {
-    audioSource.volume = volume;
   }
 }
