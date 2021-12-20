@@ -3423,6 +3423,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5821011391838969980, guid: 8ebb7be55279209408ddade9085e5a40, type: 3}
     - target: {fileID: 7273422372105395347, guid: a3a0a4d016b4a0b41b57ae6c96b38902, type: 3}
+      propertyPath: sceneTransitions
+      value: 
+      objectReference: {fileID: 2032889779}
+    - target: {fileID: 7273422372105395347, guid: a3a0a4d016b4a0b41b57ae6c96b38902, type: 3}
       propertyPath: hearts.Array.size
       value: 8
       objectReference: {fileID: 0}

@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 
 public class PlayerMover : MonoBehaviour, IDamageable {
+  [SerializeField] SceneTransitions sceneTransitions;
   public float speed;
   public Image[] hearts;
   public Sprite fullHeart;
@@ -71,8 +72,8 @@ public class PlayerMover : MonoBehaviour, IDamageable {
     updateHealthUI(health);
 
     if (health <= 0) {
-      Debug.Log("You Died :(");
       Destroy(gameObject);
+      sceneTransitions.LoadScene("Lose");
     }
   }
 
