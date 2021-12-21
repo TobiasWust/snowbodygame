@@ -247,7 +247,7 @@ MonoBehaviour:
   speed: 2
   lifeTime: 5
   Explosion: {fileID: 30688931311797316, guid: b2f283a5185c5ec47a4890910d92a02a, type: 3}
-  damage: 40
+  damage: 4
   HitEffect: {fileID: 0}
   layer: 0
   target: {fileID: 0}

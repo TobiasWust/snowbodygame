@@ -11,8 +11,8 @@ public class ParticleProjectile : MonoBehaviour {
   private void Start() {
     if (doScreenShake) {
 
-      camAnim = GameObject.FindGameObjectWithTag("VCam").GetComponent<Animator>();
-      camAnim.SetTrigger("shake");
+      camAnim = GameObject.FindGameObjectWithTag("VCam")?.GetComponent<Animator>();
+      camAnim?.SetTrigger("shake");
     }
   }
 

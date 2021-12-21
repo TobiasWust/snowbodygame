@@ -136,4 +136,8 @@ public class PlayerMover : MonoBehaviour, IDamageable {
   void playHitSound() {
     if (hitSound) Instantiate(hitSound, transform.position, transform.rotation);
   }
+
+  public void destroySelf() {
+    Destroy(gameObject);
+  }
 }
