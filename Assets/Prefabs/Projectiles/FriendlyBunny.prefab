@@ -247,7 +247,7 @@ MonoBehaviour:
   speed: 2
   lifeTime: 5
   Explosion: {fileID: 30688931311797316, guid: b2f283a5185c5ec47a4890910d92a02a, type: 3}
-  damage: 4
+  damage: 40
   HitEffect: {fileID: 0}
   layer: 0
   target: {fileID: 0}
@@ -263,8 +263,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a3920c5fbbcc84eb90a02ce8bf200a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnSound: {fileID: 6491854486697875106, guid: 1a1f73893b91a4141a913283f6da7bc3, type: 3}
-  destroySound: {fileID: 6491854486697875106, guid: 7c50831ca84c7f24282e2dd86dbbd403, type: 3}
+  spawnSound: {fileID: 8811437572752252258, guid: 8c8541d357c8aa0489515bac8bd7e092, type: 3}
+  destroySound: {fileID: 6491854486697875106, guid: c37dc2a826f42ba4ba0a41bc751867f3, type: 3}
 --- !u!1 &4137011441350113805
 GameObject:
   m_ObjectHideFlags: 0

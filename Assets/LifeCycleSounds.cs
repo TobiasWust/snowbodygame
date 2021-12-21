@@ -10,6 +10,6 @@ public class LifeCycleSounds : MonoBehaviour {
     if (spawnSound) Instantiate(spawnSound, transform.position, transform.rotation);
   }
   private void OnDestroy() {
-    if (spawnSound) Instantiate(destroySound, transform.position, transform.rotation);
+    if (destroySound) Instantiate(destroySound, transform.position, transform.rotation);
   }
 }

@@ -2429,7 +2429,10 @@ MonoBehaviour:
   CarrotExplosions:
   - {fileID: 1504000568672874228, guid: 66957b5970bf681488df0050b4376472, type: 3}
   - {fileID: 1504000568672874228, guid: 3251124d824dcb648a574091a0546033, type: 3}
+  landingSound: {fileID: 6491854486697875106, guid: acaf814a276f2834a94bc831dbfcf328, type: 3}
   landingEffect: {fileID: 8827957397697703345, guid: 1f0981de947995c4c998948171660e2f, type: 3}
+  hitSound: {fileID: 6491854486697875106, guid: 01fbd8e2834056742badebc09f118555, type: 3}
+  deathSound: {fileID: 6491854486697875106, guid: 1708c7b5198405142a6b14f41db73a9c, type: 3}
   damage: 1
   HealthBarPrefab: {fileID: 3721193390466523483, guid: fe087838309a5f3428531554ed475b5b, type: 3}
   timeBetweenSpawns: 2

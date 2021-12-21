@@ -23,9 +23,9 @@ public class PlayerMover : MonoBehaviour, IDamageable {
   private void Start() {
     rb = GetComponent<Rigidbody2D>();
     anim = GetComponent<Animator>();
-    camAnim = GameObject.FindGameObjectWithTag("VCam").GetComponent<Animator>();
+    camAnim = GameObject.FindGameObjectWithTag("VCam")?.GetComponent<Animator>();
     health = hearts.Length;
-    weaponPanel = GameObject.FindGameObjectWithTag("WeaponPanel").GetComponent<WeaponPanel>();
+    weaponPanel = GameObject.FindGameObjectWithTag("WeaponPanel")?.GetComponent<WeaponPanel>();
 
     equipWeapon(startWeapon);
   }
@@ -71,7 +71,7 @@ public class PlayerMover : MonoBehaviour, IDamageable {
     health -= damageAmount;
 
     playHitSound();
-    camAnim.SetTrigger("shake");
+    if (camAnim) camAnim.SetTrigger("shake");
     hurtPanel.SetTrigger("hurt");
     updateHealthUI(health);
 
@@ -86,6 +86,7 @@ public class PlayerMover : MonoBehaviour, IDamageable {
   }
 
   public void equipWeapon(Weapon weapon) {
+    if (weaponPanel == null) return;
     weaponPanel.setName(weapon.name);
     weaponPanel.setSpeed(weapon.timeBetweenShots);
     weaponPanel.setDamage(weapon.projectile.GetComponent<Projectile>().damage);

@@ -4907,3 +4907,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   root: {fileID: 1411435310836800582}
+  autoDestroy: 1
+  delay: 3

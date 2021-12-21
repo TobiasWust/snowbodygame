@@ -209,5 +209,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a3920c5fbbcc84eb90a02ce8bf200a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnSound: {fileID: 6491854486697875106, guid: 1a1f73893b91a4141a913283f6da7bc3, type: 3}
+  spawnSound: {fileID: 6491854486697875106, guid: 39ef21831bf0eaa46a7402c261d6d6e0, type: 3}
   destroySound: {fileID: 6491854486697875106, guid: 349639d20eaa5fa4693d57bbaf732ffd, type: 3}

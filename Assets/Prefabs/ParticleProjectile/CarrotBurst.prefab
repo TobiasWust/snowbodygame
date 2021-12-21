@@ -4887,6 +4887,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1504000568672874227}
+  - component: {fileID: 4621503065589430613}
   m_Layer: 0
   m_Name: CarrotBurst
   m_TagString: Untagged
@@ -4909,6 +4910,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 21.48, y: -14.36, z: -3.31}
+--- !u!114 &4621503065589430613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504000568672874228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11a3920c5fbbcc84eb90a02ce8bf200a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnSound: {fileID: 6491854486697875106, guid: ae88ae6b26cbec340b0b86bce60daae1, type: 3}
+  destroySound: {fileID: 0}
 --- !u!1001 &3859491968666892481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4998,3 +5013,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   root: {fileID: 1504000568672874228}
+  autoDestroy: 0
+  delay: 0

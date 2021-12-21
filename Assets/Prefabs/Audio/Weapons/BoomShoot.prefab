@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2279645042705803972}
   - component: {fileID: -2604663247362931504}
   m_Layer: 0
-  m_Name: BoomSound
+  m_Name: BoomShoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +42,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4001323728562874169, guid: 36f310bcb8f745c4ba9f5ff07c3712d3, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 4066ab923baa8d74691023f59fd90183, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 351ad899376910748a9cd25391892eb0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -53,7 +53,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 10
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0

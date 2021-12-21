@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PatrolBehaviour : StateMachineBehaviour {
 
-  public float speed;
+  [SerializeField] float speed;
+  [SerializeField] GameObject loughSound;
   // public bool isBursting;
   // public GameObject Burst;
 
@@ -22,6 +23,7 @@ public class PatrolBehaviour : StateMachineBehaviour {
     if (Vector2.Distance(animator.transform.position, patrolPoints[randomPoint].transform.position) < .1f) {
       randomPoint = Random.Range(0, patrolPoints.Length);
       if (animator.GetInteger("explosions") > 0) animator.SetTrigger("explode");
+      if (loughSound) Instantiate(loughSound, animator.transform.position, animator.transform.rotation);
     }
   }
 

@@ -41,7 +41,7 @@ public class Weapon : MonoBehaviour {
     // }
 
     if (Input.GetButton("Fire1") && Time.time >= shotTime) {
-      camAnim.SetTrigger("zoomShake");
+      if (camAnim) camAnim.SetTrigger("zoomShake");
       foreach (Transform shotPoint in shotPoints) {
         if (ShootEffect) Instantiate(ShootEffect, shotPoint.position, transform.rotation);
         Projectile bullet = Instantiate(projectile, shotPoint.position, shotPoint.rotation).GetComponent<Projectile>();

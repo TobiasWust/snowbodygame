@@ -7,7 +7,10 @@ using DG.Tweening;
 public class Boss : MonoBehaviour, IDamageable {
   [SerializeField] Enemy[] enemies;
   [SerializeField] GameObject[] CarrotExplosions;
+  [SerializeField] GameObject landingSound;
   [SerializeField] GameObject landingEffect;
+  [SerializeField] GameObject hitSound;
+  [SerializeField] GameObject deathSound;
   [SerializeField] int damage;
   [SerializeField] GameObject HealthBarPrefab;
   [SerializeField] int timeBetweenSpawns;
@@ -40,6 +43,7 @@ public class Boss : MonoBehaviour, IDamageable {
     health -= damageAmount;
 
     hitShaderEffect();
+    playHitSound();
     updateHealthUI(health);
 
     explosions = Mathf.RoundToInt((1 - ((float)health / maxHealth)) * 10) - carrotExplosionOffset;
@@ -68,9 +72,13 @@ public class Boss : MonoBehaviour, IDamageable {
     if (Healthbar) Healthbar.setHealth((float)health / (float)maxHealth);
   }
 
+  public void playLandingSound() {
+    if (landingSound) Instantiate(landingSound, transform.position, transform.rotation);
+  }
+
   public void LandingEvent() {
     camAnim.SetTrigger("shake");
-    Instantiate(landingEffect, transform.position, transform.rotation);
+    if (landingEffect) Instantiate(landingEffect, transform.position, transform.rotation);
   }
 
   public void explodeEvent() {
@@ -92,6 +100,14 @@ public class Boss : MonoBehaviour, IDamageable {
     }
   }
 
+  void playDeathSound() {
+    if (deathSound) Instantiate(deathSound, transform.position, transform.rotation);
+  }
+
+  void playHitSound() {
+    if (hitSound) Instantiate(hitSound, transform.position, transform.rotation);
+  }
+
   void initializeHealthBar() {
     GameObject _healthBar = Instantiate(HealthBarPrefab);
     Healthbar = _healthBar.GetComponent<Bosslife>();
@@ -99,14 +115,24 @@ public class Boss : MonoBehaviour, IDamageable {
   }
 
   void bossDefeated() {
-    // kill all enemies;
-    Debug.Log("got here");
+    playDeathSound();
+    gameObject.SetActive(false);
+
+    Invoke("killAllEnemies", 2);
+  }
+
+  void killAllEnemies() {
     Enemy[] enemies = GameObject.FindObjectsOfType<Enemy>(); // probably not most performant but should be ok
     foreach (var enemy in enemies) {
       enemy.takeDamage(100);
     }
-    Destroy(gameObject);
-    sceneTransitions.LoadScene("MainMenu"); // todo replace with win. add timeout
+
+    Invoke("finishScene", 4);
+  }
+
+  void finishScene() {
+    DontDestroyOnLoad(GameObject.FindGameObjectWithTag("Player"));
+    sceneTransitions.LoadScene("Win"); // todo replace with win. add timeout
   }
 
   void spawnRandomEnemy() {
