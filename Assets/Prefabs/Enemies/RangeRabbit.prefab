@@ -64,6 +64,7 @@ Transform:
   - {fileID: 3532036123111649216}
   - {fileID: 759402937199873527}
   - {fileID: 992973641061123332}
+  - {fileID: 1138192946368989665}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -146,9 +147,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 25
-  speed: 2
-  timeBetweenAttacks: 4
-  damage: 0
+  hitSound: {fileID: 8811437572752252258, guid: 1d4d40f648a120340a4bd9bb1f84988d, type: 3}
+  deathSound: {fileID: 8811437572752252258, guid: 50bd01e3fd2355a46a49bd3a2b21706e, type: 3}
+  deathEffect: {fileID: 30688931311797316, guid: b2f283a5185c5ec47a4890910d92a02a, type: 3}
   player: {fileID: 0}
   drops:
   - Pickups:
@@ -167,10 +168,13 @@ MonoBehaviour:
     - {fileID: 8209001304650922965, guid: 9022a93be5abf1049a31c399cefafe1a, type: 3}
     - {fileID: 8209001304650922965, guid: 6dcda2535193f42499e2631b32823df2, type: 3}
     pickupChance: 7
-  deathEffect: {fileID: 30688931311797316, guid: b2f283a5185c5ec47a4890910d92a02a, type: 3}
+  speed: 2
+  timeBetweenAttacks: 4
+  damage: 0
   stopDistance: 4
   shotPoint: {fileID: 759402937199873527}
   enemyProjectile: {fileID: 1910939002463419783, guid: 3ef16878897fb3a4a88b9d2137d9503f, type: 3}
+  shotSound: {fileID: 8811437572752252258, guid: 19720f92c12b9c94b8d6b9223b10b173, type: 3}
 --- !u!1 &3532036121643599399
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,3 +505,65 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &5745288580890694231
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3532036121239527635}
+    m_Modifications:
+    - target: {fileID: 4643477237674597302, guid: 88d1dfa77a03c384db14e6dbdcef9daf, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643477237674597302, guid: 88d1dfa77a03c384db14e6dbdcef9daf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643477237674597302, guid: 88d1dfa77a03c384db14e6dbdcef9daf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643477237674597302, guid: 88d1dfa77a03c384db14e6dbdcef9daf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643477237674597302, guid: 88d1dfa77a03c384db14e6dbdcef9daf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643477237674597302, guid: 88d1dfa77a03c384db14e6dbdcef9daf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643477237674597302, guid: 88d1dfa77a03c384db14e6dbdcef9daf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643477237674597302, guid: 88d1dfa77a03c384db14e6dbdcef9daf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643477237674597302, guid: 88d1dfa77a03c384db14e6dbdcef9daf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643477237674597302, guid: 88d1dfa77a03c384db14e6dbdcef9daf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643477237674597302, guid: 88d1dfa77a03c384db14e6dbdcef9daf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8811437572752252258, guid: 88d1dfa77a03c384db14e6dbdcef9daf, type: 3}
+      propertyPath: m_Name
+      value: RangeRabbitFly
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 88d1dfa77a03c384db14e6dbdcef9daf, type: 3}
+--- !u!4 &1138192946368989665 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4643477237674597302, guid: 88d1dfa77a03c384db14e6dbdcef9daf, type: 3}
+  m_PrefabInstance: {fileID: 5745288580890694231}
+  m_PrefabAsset: {fileID: 0}

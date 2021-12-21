@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4085746976801397483}
   - component: {fileID: -4274397392344341766}
   - component: {fileID: 2549777247708618983}
+  - component: {fileID: -564668350377189530}
   m_Layer: 0
   m_Name: WeakIceball
   m_TagString: Untagged
@@ -99,7 +100,7 @@ MonoBehaviour:
   speed: 6
   lifeTime: 0.4
   Explosion: {fileID: 4383126461203979861, guid: e1ab3922675e6884e9bc396d3abde055, type: 3}
-  damage: 5
+  damage: 7
   HitEffect: {fileID: 0}
   layer: 0
 --- !u!61 &2549777247708618983
@@ -128,3 +129,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.29141796, y: 0.39574373}
   m_EdgeRadius: 0
+--- !u!114 &-564668350377189530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4085746976801397482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11a3920c5fbbcc84eb90a02ce8bf200a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnSound: {fileID: 6491854486697875106, guid: 1a1f73893b91a4141a913283f6da7bc3, type: 3}
+  destroySound: {fileID: 6491854486697875106, guid: 7c50831ca84c7f24282e2dd86dbbd403, type: 3}

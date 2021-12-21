@@ -226,6 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WeaponToEquip: {fileID: 5821011391838969980, guid: a27f68380b512df4b8cd9e42d9f09b32, type: 3}
   pickUpEffect: {fileID: 0}
+  pickUpSound: {fileID: 8811437572752252258, guid: 0cbf300ddb148b844bfff38a8843681b, type: 3}
 --- !u!61 &9213246181250865417
 BoxCollider2D:
   m_ObjectHideFlags: 0

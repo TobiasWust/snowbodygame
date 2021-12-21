@@ -4,6 +4,7 @@ using DG.Tweening;
 
 public class PlayerMover : MonoBehaviour, IDamageable {
   [SerializeField] SceneTransitions sceneTransitions;
+  [SerializeField] GameObject hitSound;
   public float speed;
   public Image[] hearts;
   public Sprite fullHeart;
@@ -66,7 +67,10 @@ public class PlayerMover : MonoBehaviour, IDamageable {
     if (isInvincible) return;
     isInvincible = true;
     Invoke("stopInvincible", .5f);
+
     health -= damageAmount;
+
+    playHitSound();
     camAnim.SetTrigger("shake");
     hurtPanel.SetTrigger("hurt");
     updateHealthUI(health);
@@ -77,13 +81,11 @@ public class PlayerMover : MonoBehaviour, IDamageable {
     }
   }
 
-  private void stopInvincible() {
+  void stopInvincible() {
     isInvincible = false;
   }
 
-
   public void equipWeapon(Weapon weapon) {
-
     weaponPanel.setName(weapon.name);
     weaponPanel.setSpeed(weapon.timeBetweenShots);
     weaponPanel.setDamage(weapon.projectile.GetComponent<Projectile>().damage);
@@ -128,5 +130,9 @@ public class PlayerMover : MonoBehaviour, IDamageable {
     Vector3 dir = (other.transform.position - transform.position).normalized;
     Vector3 target = transform.position - dir;
     transform.DOLocalJump(target, 1f, 1, .5f).SetUpdate(UpdateType.Fixed).SetId("kickback");
+  }
+
+  void playHitSound() {
+    if (hitSound) Instantiate(hitSound, transform.position, transform.rotation);
   }
 }

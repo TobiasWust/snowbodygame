@@ -33,10 +33,11 @@ public class RangedEnemy : Enemy {
     float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
     Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
 
+    playShotSound();
+
     shotPoint.rotation = rotation;
 
     Projectile bullet = Instantiate(enemyProjectile, shotPoint.position, shotPoint.rotation).GetComponent<Projectile>();
     bullet.layer = 7; // enemies don't hit enemies;
-
   }
 }

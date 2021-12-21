@@ -43,6 +43,7 @@ public class Summoner : Enemy {
   public void Summon() {
     if (player != null) {
       Instantiate(Poof, transform.position, transform.rotation);
+      playShotSound();
       int numberOfBunnys = Random.Range(1, 3);
       for (int i = 0; i < numberOfBunnys; i++) {
         Instantiate(EnemyToSummon, transform.position, transform.rotation);

@@ -2435,7 +2435,7 @@ MonoBehaviour:
   timeBetweenSpawns: 2
   stageTwoPercent: 0.5
   carrotExplosionOffset: 3
-  health: 480
+  health: 780
   explosions: 0
 --- !u!50 &3989053827342119379
 Rigidbody2D:

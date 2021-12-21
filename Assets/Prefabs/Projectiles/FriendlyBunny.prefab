@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 2671048188764359175}
   - component: {fileID: 4321000929809206631}
   - component: {fileID: 92646314}
+  - component: {fileID: -8156123076097180199}
   m_Layer: 6
   m_Name: FriendlyBunny
   m_TagString: Untagged
@@ -248,7 +249,22 @@ MonoBehaviour:
   Explosion: {fileID: 30688931311797316, guid: b2f283a5185c5ec47a4890910d92a02a, type: 3}
   damage: 4
   HitEffect: {fileID: 0}
+  layer: 0
   target: {fileID: 0}
+--- !u!114 &-8156123076097180199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4137011441266426856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11a3920c5fbbcc84eb90a02ce8bf200a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnSound: {fileID: 6491854486697875106, guid: 1a1f73893b91a4141a913283f6da7bc3, type: 3}
+  destroySound: {fileID: 6491854486697875106, guid: 7c50831ca84c7f24282e2dd86dbbd403, type: 3}
 --- !u!1 &4137011441350113805
 GameObject:
   m_ObjectHideFlags: 0

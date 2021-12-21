@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6362216166293028974}
   - component: {fileID: 8670304079900381709}
   - component: {fileID: 8054092276992018919}
+  - component: {fileID: 1395339845369903256}
   m_Layer: 0
   m_Name: woodbullet
   m_TagString: Untagged
@@ -101,6 +102,7 @@ MonoBehaviour:
   Explosion: {fileID: 0}
   damage: 2
   HitEffect: {fileID: 30688931311797316, guid: 173fec80dcfd5a54ebeb96c4e6ee0fe2, type: 3}
+  layer: 0
 --- !u!61 &8054092276992018919
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -127,3 +129,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.07861751, y: 0.15439823}
   m_EdgeRadius: 0
+--- !u!114 &1395339845369903256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9004814802807793119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11a3920c5fbbcc84eb90a02ce8bf200a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnSound: {fileID: 6491854486697875106, guid: 1a1f73893b91a4141a913283f6da7bc3, type: 3}
+  destroySound: {fileID: 6491854486697875106, guid: 7c50831ca84c7f24282e2dd86dbbd403, type: 3}

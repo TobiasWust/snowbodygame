@@ -361,9 +361,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 30
-  speed: 2
-  timeBetweenAttacks: 3
-  damage: 1
+  hitSound: {fileID: 6491854486697875106, guid: f056de5a6298e1c42b23e4e10a350bd8, type: 3}
+  deathSound: {fileID: 6491854486697875106, guid: cc9cd22b288770a43b758318a5c462c9, type: 3}
+  deathEffect: {fileID: 30688931311797316, guid: b2f283a5185c5ec47a4890910d92a02a, type: 3}
   player: {fileID: 0}
   drops:
   - Pickups:
@@ -380,8 +380,10 @@ MonoBehaviour:
     - {fileID: 8209001304650922965, guid: 9022a93be5abf1049a31c399cefafe1a, type: 3}
     - {fileID: 8209001304650922965, guid: 6dcda2535193f42499e2631b32823df2, type: 3}
     pickupChance: 5
-  deathEffect: {fileID: 30688931311797316, guid: b2f283a5185c5ec47a4890910d92a02a, type: 3}
-  stopDistance: 2
+  speed: 2
+  timeBetweenAttacks: 3
+  damage: 1
+  stopDistance: 1
   attackDuration: 0.5
 --- !u!1 &3268935172888298356
 GameObject:

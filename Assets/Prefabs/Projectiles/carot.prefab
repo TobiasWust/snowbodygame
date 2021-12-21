@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1910939002463419778}
   - component: {fileID: 1910939002463419780}
   - component: {fileID: 5580468263230004501}
+  - component: {fileID: 758947396332505982}
   m_Layer: 0
   m_Name: carot
   m_TagString: Untagged
@@ -127,3 +128,18 @@ MonoBehaviour:
   Explosion: {fileID: 7529074692893120343, guid: 841c83414f4091f4abdd159b2632d532, type: 3}
   damage: 1
   HitEffect: {fileID: 0}
+  layer: 0
+--- !u!114 &758947396332505982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910939002463419783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11a3920c5fbbcc84eb90a02ce8bf200a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnSound: {fileID: 0}
+  destroySound: {fileID: 6491854486697875106, guid: 7c50831ca84c7f24282e2dd86dbbd403, type: 3}

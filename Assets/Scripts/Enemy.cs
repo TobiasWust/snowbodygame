@@ -2,11 +2,11 @@ using UnityEngine;
 using DG.Tweening;
 
 public class Enemy : MonoBehaviour, IDamageable {
-  public int health;
-  public float speed;
-  public float timeBetweenAttacks;
-  public int damage;
-
+  [SerializeField] int health;
+  [SerializeField] GameObject hitSound;
+  [SerializeField] GameObject shotSound;
+  [SerializeField] GameObject deathSound;
+  [SerializeField] GameObject deathEffect;
   [System.Serializable]
   public class Drop {
     public GameObject[] Pickups;
@@ -17,19 +17,22 @@ public class Enemy : MonoBehaviour, IDamageable {
   public Transform player;
 
   public Drop[] drops;
+  public float speed;
+  public float timeBetweenAttacks;
+  public int damage;
 
   public virtual void Start() {
     player = GameObject.FindGameObjectWithTag("Player").transform;
   }
-
-  public GameObject deathEffect;
 
   public void takeDamage(int damageAmount) {
     health -= damageAmount;
 
     hitShaderEffect();
 
+    if (health > 0) playHitSound();
     if (health <= 0) {
+      playDeathSound();
       if (deathEffect) Instantiate(deathEffect, transform.position, Quaternion.identity);
       throwDrop();
       Destroy(gameObject);
@@ -56,5 +59,16 @@ public class Enemy : MonoBehaviour, IDamageable {
       sprites[i].material.SetFloat("_HitEffectBlend", 0);
       sprites[i].material.DOFloat(1, "_HitEffectBlend", .1f).SetLoops(2, LoopType.Yoyo).SetId("hit");
     }
+  }
+
+  void playHitSound() {
+    if (hitSound) Instantiate(hitSound, transform.position, transform.rotation);
+  }
+  void playDeathSound() {
+    if (deathSound) Instantiate(deathSound, transform.position, transform.rotation);
+  }
+
+  public void playShotSound() {
+    if (shotSound) Instantiate(shotSound, transform.position, transform.rotation);
   }
 }
