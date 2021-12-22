@@ -40,7 +40,8 @@ public class Weapon : MonoBehaviour {
     //   transform.rotation = rotation;
     // }
 
-    if (Input.GetButton("Fire1") && Time.time >= shotTime) {
+    if (Input.GetButton("Fire1") && Time.time >= shotTime && !PauseMenu.gameIsPaused) {
+      Debug.Log("sack");
       if (camAnim) camAnim.SetTrigger("zoomShake");
       foreach (Transform shotPoint in shotPoints) {
         if (ShootEffect) Instantiate(ShootEffect, shotPoint.position, transform.rotation);
