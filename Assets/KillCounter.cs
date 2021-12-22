@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 
 public class KillCounter : MonoBehaviour {
-  private static int count = 0;
+  private int count = 0;
   private void Start() {
     updateKillCount();
   }

@@ -51,4 +51,10 @@ public class Summoner : Enemy {
     }
   }
 
+  private void OnCollisionEnter2D(Collision2D other) {
+    if (other.gameObject.tag == "Player") {
+      player.GetComponent<PlayerMover>().takeDamage(damage);
+    }
+  }
+
 }

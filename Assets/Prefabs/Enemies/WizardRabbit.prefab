@@ -220,7 +220,7 @@ MonoBehaviour:
     pickupChance: 5
   speed: 1
   timeBetweenAttacks: 2
-  damage: 0
+  damage: 3
   minX: -18
   minY: -9
   maxX: 18
