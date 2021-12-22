@@ -19,6 +19,8 @@ public class WaveSpawner : MonoBehaviour {
   public GameObject boss;
   public Transform bossSpawnPoint;
 
+  [SerializeField] WaveInfo waveInfo;
+
   private Wave currentWave;
   private int currentWaveIndex;
   private Transform player;
@@ -31,7 +33,8 @@ public class WaveSpawner : MonoBehaviour {
   }
 
   IEnumerator StartNextWave(int index) {
-    Debug.Log("Next Wave in " + timeBetweenWaves + "Seconds");
+    if (waveInfo) waveInfo.show();
+    // Debug.Log("Next Wave in " + timeBetweenWaves + "Seconds");
     yield return new WaitForSeconds(timeBetweenWaves);
     StartCoroutine(SpawnWave(index));
   }
