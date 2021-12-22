@@ -2103,7 +2103,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 272.3, y: 0}
-  m_SizeDelta: {x: 282.89, y: 91.01}
+  m_SizeDelta: {x: 381.29, y: 91.01}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1217623732
 MonoBehaviour:
@@ -2127,8 +2127,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Pause
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: db6992e4917909e4881ff5465d7f65b7, type: 2}
+  m_sharedMaterial: {fileID: -635979099216096552, guid: db6992e4917909e4881ff5465d7f65b7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2191,7 +2191,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1217623733
@@ -2510,7 +2510,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5990896407078388580, guid: 5928d83d18a383341ae6af7bea9f98ee, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.69997
       objectReference: {fileID: 0}
     - target: {fileID: 5990896407078388580, guid: 5928d83d18a383341ae6af7bea9f98ee, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2530,7 +2530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5990896407485655512, guid: 5928d83d18a383341ae6af7bea9f98ee, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.69997
       objectReference: {fileID: 0}
     - target: {fileID: 5990896407485655512, guid: 5928d83d18a383341ae6af7bea9f98ee, type: 3}
       propertyPath: m_AnchorMax.y
