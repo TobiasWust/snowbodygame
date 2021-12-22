@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour, IDamageable {
   [SerializeField] GameObject shotSound;
   [SerializeField] GameObject deathSound;
   [SerializeField] GameObject deathEffect;
+  KillCounter killCounter;
   [System.Serializable]
   public class Drop {
     public GameObject[] Pickups;
@@ -23,6 +24,7 @@ public class Enemy : MonoBehaviour, IDamageable {
 
   public virtual void Start() {
     player = GameObject.FindGameObjectWithTag("Player").transform;
+    killCounter = GameObject.FindGameObjectWithTag("KillCounter").GetComponent<KillCounter>();
   }
 
   public void takeDamage(int damageAmount) {
@@ -35,6 +37,7 @@ public class Enemy : MonoBehaviour, IDamageable {
       playDeathSound();
       if (deathEffect) Instantiate(deathEffect, transform.position, Quaternion.identity);
       throwDrop();
+      killCount();
       Destroy(gameObject);
     }
   }
@@ -70,5 +73,10 @@ public class Enemy : MonoBehaviour, IDamageable {
 
   public void playShotSound() {
     if (shotSound) Instantiate(shotSound, transform.position, transform.rotation);
+  }
+
+  void killCount() {
+    if (killCounter == null) return;
+    killCounter.addKill();
   }
 }

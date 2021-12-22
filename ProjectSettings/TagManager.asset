@@ -11,6 +11,7 @@ TagManager:
   - WeaponPanel
   - Dropshadow
   - UI
+  - KillCounter
   layers:
   - Default
   - TransparentFX
